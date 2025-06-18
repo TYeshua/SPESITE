@@ -19,7 +19,7 @@ const Logo: React.FC<LogoProps> = ({ isScrolled }) => {
         isScrolled 
           ? 'text-gray-700 dark:text-gray-300' 
           : 'text-gray-200'
-      }`}>Macaé</span>
+      }`}>UFPA</span>
     </div>
   );
 };

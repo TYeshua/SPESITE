@@ -8,14 +8,14 @@ const HeroSection: React.FC = () => {
     <section className="relative h-screen">
       {/* Hero background */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat " 
         style={{ 
-          backgroundImage: "url('https://images.pexels.com/photos/4485688/pexels-photo-4485688.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
-          backgroundPosition: "center 30%"
+          backgroundImage: "url('/public/logospe.jpg')",  // <- caminho relativo à pasta public
+          backgroundPosition: "center 50%"
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50 dark:bg-opacity-70"></div>
-      </div>
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      </div>
       
       {/* Content */}
       <div className="relative h-full container mx-auto px-4 flex flex-col justify-center">
@@ -26,8 +26,8 @@ const HeroSection: React.FC = () => {
           className="max-w-2xl"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Sociedade dos Engenheiros de Petróleo
-            <span className="block text-blue-400">Seção Macaé</span>
+            Society of Petroleum Engineers <br />
+            <span className="block text-blue-400">Seção UFPA</span>
           </h1>
           
           <p className="text-xl text-gray-200 mb-8">
@@ -50,6 +50,7 @@ const HeroSection: React.FC = () => {
       </div>
       
       {/* Scroll indicator */}
+      
       <motion.div 
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0 }}

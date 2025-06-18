@@ -28,8 +28,8 @@ const AboutSection: React.FC = () => {
           >
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.pexels.com/photos/4481326/pexels-photo-4481326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-                alt="Membros da SPE Macaé" 
+                src="/csal.png" 
+                alt="salinas" 
                 className="w-full h-auto"
               />
             </div>
@@ -45,15 +45,15 @@ const AboutSection: React.FC = () => {
             className="space-y-6"
           >
             <div>
-              <h2 className="text-blue-600 dark:text-blue-400 font-medium mb-2">SOBRE A SPE MACAÉ</h2>
+              <h2 className="text-blue-600 dark:text-blue-400 font-medium mb-2">SOBRE A SPE UFPA</h2>
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
                 Avançando o Conhecimento Técnico em Petróleo e Gás
               </h3>
             </div>
             
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              A Sociedade dos Engenheiros de Petróleo (SPE) Seção Macaé foi estabelecida em 1990 para servir 
-              profissionais da indústria de petróleo e gás na região de Macaé e em todo o Brasil. Nossa missão 
+              A Sociedade dos Engenheiros de Petróleo (SPE) Seção UFPA foi estabelecida em 2024 para servir 
+              profissionais da indústria de petróleo e gás na Universidade Federal do Pará na região de Salinópolis e em todo o Brasil. Nossa missão 
               é coletar, disseminar e trocar conhecimento técnico sobre exploração, desenvolvimento e produção 
               de recursos petrolíferos.
             </p>
