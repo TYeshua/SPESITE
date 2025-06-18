@@ -51,8 +51,8 @@ const ContactSection: React.FC = () => {
                   <div>
                     <h5 className="font-bold text-gray-900 dark:text-white mb-1">Nosso Escritório</h5>
                     <p className="text-gray-600 dark:text-gray-300">
-                      Av. Atlântica, 1193 - Centro<br />
-                      Macaé - RJ, 27920-390<br />
+                      UFPA Campus Salinópolis<br />
+                      Rua Raimundo Santana Cruz, S/N. Bairro São Tomé - Salinópolis - PA- PA, 68721-000<br />
                       Brasil
                     </p>
                   </div>
@@ -64,7 +64,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <h5 className="font-bold text-gray-900 dark:text-white mb-1">Telefone</h5>
-                    <p className="text-gray-600 dark:text-gray-300">+55 (22) 1234-5678</p>
+                    <p className="text-gray-600 dark:text-gray-300">+55 (91) 99109-7678</p>
                   </div>
                 </div>
                 
@@ -74,7 +74,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <h5 className="font-bold text-gray-900 dark:text-white mb-1">E-mail</h5>
-                    <p className="text-gray-600 dark:text-gray-300">contato@spemacae.org</p>
+                    <p className="text-gray-600 dark:text-gray-300">ufpaspe@gmail.com</p>
                   </div>
                 </div>
                 
@@ -85,7 +85,7 @@ const ContactSection: React.FC = () => {
                   <div>
                     <h5 className="font-bold text-gray-900 dark:text-white mb-1">Horário de Funcionamento</h5>
                     <p className="text-gray-600 dark:text-gray-300">
-                      Segunda - Sexta: 9:00 - 17:00<br />
+                      Segunda - Sexta: 8:00 - 18:00<br />
                       Sábado e Domingo: Fechado
                     </p>
                   </div>
@@ -95,14 +95,14 @@ const ContactSection: React.FC = () => {
               <div className="mt-8">
                 <div className="h-64 rounded-lg overflow-hidden">
                   <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14865.241107393034!2d-41.7868235!3d-22.3847534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96329060305e5f%3A0x1049d0d427af10f!2sMaca%C3%A9%2C%20State%20of%20Rio%20de%20Janeiro%2C%20Brazil!5e0!3m2!1sen!2sus!4v1717000000000!5m2!1sen!2sus" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7979.152678256708!2d-47.34443102400542!3d-0.6310359352631287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a8991aa9bcb021%3A0x9d2277db2e684e09!2sUFPA%20-%20Campus%20Salin%C3%B3polis!5e0!3m2!1sen!2sus!4v1750277776571!5m2!1sen!2sus"
                     width="100%" 
                     height="100%" 
                     style={{ border: 0 }} 
                     allowFullScreen 
                     loading="lazy" 
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Localização SPE Macaé"
+                    title="Localização SPE UFPA"
                   ></iframe>
                 </div>
               </div>

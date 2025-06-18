@@ -9,19 +9,16 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Column */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">SPE Macaé</h3>
+            <h3 className="text-xl font-semibold mb-4">SPE UFPA</h3>
             <p className="text-gray-400 dark:text-gray-500 mb-4">
               A Sociedade dos Engenheiros de Petróleo Seção Macaé é uma organização sem fins lucrativos 
               comprometida com o avanço da indústria de petróleo e gás no Brasil.
             </p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors" aria-label="Facebook">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="https://instagram.com" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/spe.ufpa?igsh=N3p3NTc3OWRiY3Fw" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors" aria-label="Instagram">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="https://linkedin.com" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/spe-ufpa-student-chapter/" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
@@ -55,15 +52,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-blue-500 mr-2 mt-1" />
-                <span className="text-gray-400 dark:text-gray-500">Av. Atlântica, 1193 - Centro, Macaé - RJ, 27920-390, Brasil</span>
+                <span className="text-gray-400 dark:text-gray-500">UFPA Campus Salinópolis, Rua Raimundo Santana Cruz, S/N. Bairro São Tomé - Salinópolis - PA- PA, 68721-000, Brasil</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-blue-500 mr-2" />
-                <span className="text-gray-400 dark:text-gray-500">+55 (22) 1234-5678</span>
+                <span className="text-gray-400 dark:text-gray-500">+55 (91) 99109-7678</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-blue-500 mr-2" />
-                <span className="text-gray-400 dark:text-gray-500">contato@spemacae.org</span>
+                <span className="text-gray-400 dark:text-gray-500">ufpaspe@gmail.com</span>
               </li>
             </ul>
           </div>
