@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-gray-800 dark:border-gray-700 mt-12 pt-8 text-center text-gray-400 dark:text-gray-500">
-          <p>© {new Date().getFullYear()} SPE Seção Macaé. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Yeshua e Jacaré. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

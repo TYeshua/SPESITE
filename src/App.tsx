@@ -19,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout><HomePage /></Layout>} />
           <Route path="/sobre" element={<Layout><AboutPage /></Layout>} />
+          
           <Route path="/eventos" element={<Layout><EventsPage /></Layout>} />
           <Route path="/contato" element={<Layout><ContactPage /></Layout>} />
           <Route path="*" element={<Layout><NotFoundPage /></Layout>} />

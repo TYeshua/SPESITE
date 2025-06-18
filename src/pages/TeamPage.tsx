@@ -25,7 +25,7 @@ export const teamMembers: TeamMember[] = [
     image: "Eveli.jpg",
     bio: "Descrição",
     linkedin: "https://www.linkedin.com/in/evelyncampelo?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ",
-    email: "campelokailanny5@gmail.com"
+    email: "ana.martins@spemacae.org"
   },
   {
     id: 3,
@@ -38,27 +38,27 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: 4,
-    name: "Ana Nascimento",
-    position: "Diretora de Marketing",
-    image: "AnaB.jpg",
+    name: "Shelda Corrêa",
+    position: "Presidente dos Sócios",
+    image: "Shelda.jpg",
     bio: "Descrição",
-    linkedin: "https://www.linkedin.com/in/ana-clara-nascimento-7a4034255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",
+    linkedin: "https://www.linkedin.com/in/shelda-corr%C3%AAa-988a10159?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ",
     email: "julia.santos@spemacae.org"
   },
   {
     id: 5,
-    name: "Gabriel Braga",
-    position: "Diretor de Comunicação e Eventos",
-    image: "Braga.jpg",
+    name: "Sophia Macedo",
+    position: "Secretariado",
+    image: "Sophia.jpg",
     bio: "Descrição",
-    linkedin: "https://www.linkedin.com/in/gabriel-braga-975990235?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",
+    linkedin: "https://www.linkedin.com/in/sophia-macedo-pereira-10643a1a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",
     email: "marco.almeida@spemacae.org"
   },
   {
     id: 6,
-    name: "Thiago Yeshua",
-    position: "Diretor da Tecnologia",
-    image: "Yeshua.jpg",
+    name: "José Santos",
+    position: "Tesoureiro",
+    image: "jos.jpg",
     bio: "Descrição",
     linkedin: "https://www.linkedin.com/in/jos%C3%A9-santos-78abb8254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",
     email: "fernanda.lima@spemacae.org"

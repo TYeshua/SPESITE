@@ -6,17 +6,19 @@ export interface Event {
   image: string;
   description: string;
   category: 'conference' | 'workshop' | 'webinar' | 'networking';
+  externalUrl?: string; // 👈 campo opcional para link externo
 }
 
 export const events: Event[] = [
   {
     id: 1,
-    title: "Simpósio de Engenharia de Petróleo 2025",
-    date: "15-17 de Maio, 2025",
-    location: "Centro de Convenções de Macaé",
-    image: "https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    description: "Junte-se a nós no maior evento de engenharia de petróleo da região, com palestrantes especialistas, workshops e oportunidades de networking.",
-    category: "conference"
+    title: "1° AmazonTech Energy",
+    date: "03 - 05 de Junho, 2025",
+    location: "Casa da Cultura, Salinópolis",
+    image: "logoamazon.jpg",
+    description: "Promovido pelo Capítulo Estudantil da SPE UFPA, o AmazonTech Energy é um evento inovador que reúne especialistas da indústria de petróleo, gás e energia em uma única oportunidade para debater o futuro do setor energético, promover troca de conhecimento acadêmico e muito mais!",
+    category: "conference",
+    externalUrl: "https://amazontechenergy.ufpa.br/" // 👈 botão levará para este link
   },
   {
     id: 2,

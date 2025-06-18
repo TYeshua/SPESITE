@@ -32,9 +32,9 @@ const EventsSection: React.FC = () => {
           className="text-center mb-12"
         >
           <motion.div variants={fadeIn('up')}>
-            <h2 className="text-blue-600 dark:text-blue-400 font-medium mb-2">PRÓXIMOS EVENTOS</h2>
+            <h2 className="text-blue-600 dark:text-blue-400 font-medium mb-2">EVENTOS</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-              Participe dos Nossos Próximos Eventos
+              Esteja por dentro dos nossos eventos
             </h3>
             <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
               Conecte-se com profissionais da indústria, aprenda com especialistas e expanda seu conhecimento
@@ -42,7 +42,7 @@ const EventsSection: React.FC = () => {
             </p>
           </motion.div>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {events.slice(0, 3).map((event, index) => (
             <motion.div
@@ -53,21 +53,21 @@ const EventsSection: React.FC = () => {
             >
               <Card hoverEffect className="h-full flex flex-col bg-white dark:bg-gray-700">
                 <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={event.image} 
-                    alt={event.title} 
+                  <img
+                    src={event.image}
+                    alt={event.title}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                   />
                   <div className="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded uppercase">
                     {categoryLabels[event.category]}
                   </div>
                 </div>
-                
+
                 <div className="p-6 flex-grow flex flex-col">
                   <h4 className="font-bold text-xl text-gray-900 dark:text-white mb-4">
                     {event.title}
                   </h4>
-                  
+
                   <div className="mb-4 flex-grow">
                     <div className="flex items-center text-gray-600 dark:text-gray-300 mb-2">
                       <Calendar className="h-4 w-4 mr-2" />
@@ -81,19 +81,32 @@ const EventsSection: React.FC = () => {
                       {event.description}
                     </p>
                   </div>
-                  
-                  <Link to={`/eventos/${event.id}`} className="mt-4">
-                    <Button variant="outline" className="w-full">
-                      Detalhes do Evento
-                    </Button>
-                  </Link>
+
+                  {event.externalUrl ? (
+                    <a
+                      href={event.externalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4"
+                    >
+                      <Button variant="outline" className="w-full">
+                        Acessar Site do Evento
+                      </Button>
+                    </a>
+                  ) : (
+                    <Link to={`/eventos/${event.id}`} className="mt-4">
+                      <Button variant="outline" className="w-full">
+                        Detalhes do Evento
+                      </Button>
+                    </Link>
+                  )}
                 </div>
               </Card>
             </motion.div>
           ))}
         </div>
-        
-        <motion.div 
+
+        <motion.div
           variants={fadeIn('up')}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
