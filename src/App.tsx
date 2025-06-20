@@ -5,8 +5,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import EventsPage from './pages/EventsPage';
+import PastEventsPage from './pages/PastEventsPage';
 import ContactPage from './pages/ContactPage';
 import NotFoundPage from './pages/NotFoundPage';
+
 
 // Import components
 import Layout from './components/layout/Layout';
@@ -19,8 +21,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout><HomePage /></Layout>} />
           <Route path="/sobre" element={<Layout><AboutPage /></Layout>} />
-          
           <Route path="/eventos" element={<Layout><EventsPage /></Layout>} />
+          <Route path="/eventos/passados" element={<Layout><PastEventsPage /></Layout>} />
           <Route path="/contato" element={<Layout><ContactPage /></Layout>} />
           <Route path="*" element={<Layout><NotFoundPage /></Layout>} />
         </Routes>

@@ -46,7 +46,6 @@ const Header: React.FC = () => {
             <div className="absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100 transition-all origin-top duration-200">
               <Link to="/sobre" className="block px-4 py-2 text-sm text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700">Sobre a SPE</Link>
               <Link to="/sobre/diretoria" className="block px-4 py-2 text-sm text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700">Diretoria</Link>
-              <Link to="/sobre/historia" className="block px-4 py-2 text-sm text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700">História</Link>
             </div>
           </div>
           <div className="relative group">

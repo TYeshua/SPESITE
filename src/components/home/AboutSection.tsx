@@ -34,8 +34,8 @@ const AboutSection: React.FC = () => {
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
-              <p className="text-blue-600 dark:text-blue-400 font-bold text-xl">35+</p>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">Anos de Excelência</p>
+              <p className="text-blue-600 dark:text-blue-400 font-bold text-xl">1° Ano</p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">Um começo com Excelência</p>
             </div>
           </motion.div>
           

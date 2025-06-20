@@ -41,14 +41,14 @@ const AboutPage: React.FC = () => {
               variants={fadeIn('up')}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             >
-              Sobre a SPE Macaé
+              Sobre a SPE UFPA
             </motion.h1>
             
             <motion.p
               variants={fadeIn('up', 0.1)}
               className="text-xl text-blue-100 mb-8"
             >
-              Avançando conhecimento e desenvolvimento profissional em engenharia de petróleo desde 1990.
+              Avançando conhecimento e desenvolvimento profissional em engenharia de petróleo.
             </motion.p>
           </motion.div>
         </div>
@@ -70,10 +70,9 @@ const AboutPage: React.FC = () => {
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Nossa Missão e Visão</h2>
               
               <p className="text-gray-700 dark:text-gray-300 mb-6">
-                A Sociedade dos Engenheiros de Petróleo (SPE) Seção Macaé foi estabelecida em 1990 com a missão de 
-                coletar, disseminar e trocar conhecimento técnico sobre exploração, desenvolvimento e produção de 
-                recursos petrolíferos e tecnologias relacionadas para o benefício público; e fornecer oportunidades 
-                para profissionais aprimorarem sua competência técnica e profissional.
+                A Sociedade dos Engenheiros de Petróleo (SPE) Seção UFPA foi estabelecida em 2024, sendo um projeto composto por estudantes so setor do petróleo, gás e engeria que buscam trazer o universo profissional para
+                o ambiente acadêmico, disseminando conhecimento em todos os aspectos de nosso setor, resultando no desenvolvimento escalar de nossos 
+                membros e ampliando suas perspectivas.
               </p>
               
               <p className="text-gray-700 dark:text-gray-300 mb-6">
@@ -130,7 +129,7 @@ const AboutPage: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Nossa História</h2>
             <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
-              Por mais de três décadas, a SPE Macaé tem apoiado a comunidade profissional no Brasil.
+              Ao decorrer de quadro décadas, a SPE tem apoiado a comunidade profissional no Brasil.
               Aqui estão alguns marcos importantes em nossa jornada.
             </p>
           </div>
@@ -143,9 +142,9 @@ const AboutPage: React.FC = () => {
               {/* 1990 */}
               <div className="relative flex flex-col md:flex-row items-center">
                 <div className="flex-1 md:text-right md:pr-8 mb-4 md:mb-0">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">1990</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">1985</h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    A Seção SPE Macaé foi oficialmente estabelecida para apoiar a crescente indústria de petróleo e gás na região.
+                    Foi fundada a SPE Brasil, sendo resultado da iniciativa de engenheiros brasileiros atuando na área de E&P em busca de colaborar com o desenvolvimento do país.
                   </p>
                 </div>
                 
@@ -169,9 +168,9 @@ const AboutPage: React.FC = () => {
                 <div className="hidden md:block w-10 h-10 bg-blue-600 rounded-full border-4 border-white dark:border-gray-900 shadow z-10 order-2"></div>
                 
                 <div className="flex-1 md:pl-8 order-1 md:order-3">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">2000</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">1989</h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Membros chegaram a 500 profissionais. Começamos a hospedar conferências técnicas anuais.
+                    Criação do primeiro Capítulo Estudantil - Unicamp.
                   </p>
                 </div>
               </div>
@@ -179,9 +178,9 @@ const AboutPage: React.FC = () => {
               {/* 2010 */}
               <div className="relative flex flex-col md:flex-row items-center">
                 <div className="flex-1 md:text-right md:pr-8 mb-4 md:mb-0">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">2010</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">2995</h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Estabelecemos parcerias com capítulos estudantis de universidades locais. Lançamos programa de mentoria.
+                    Criação da Seção Macaé, com missão de disseminar o conhecimento técnico em nossa indústria estimulando o networking promovendo eventos de alto nível.
                   </p>
                 </div>
                 
@@ -189,7 +188,7 @@ const AboutPage: React.FC = () => {
                 
                 <div className="flex-1 md:pl-8">
                   <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md md:mt-0">
-                    <span className="text-blue-600 dark:text-blue-400 font-bold">Iniciativas Educacionais</span>
+                    <span className="text-blue-600 dark:text-blue-400 font-bold">Seção Macaé</span>
                   </div>
                 </div>
               </div>
@@ -205,9 +204,9 @@ const AboutPage: React.FC = () => {
                 <div className="hidden md:block w-10 h-10 bg-blue-600 rounded-full border-4 border-white dark:border-gray-900 shadow z-10 order-2"></div>
                 
                 <div className="flex-1 md:pl-8 order-1 md:order-3">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Presente</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">2024</h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Atualmente focando em transformação digital, sustentabilidade e iniciativas de transição energética.
+                    Fundação do Capítulo Estudantil da SPE-UFPA sediado no Campus Salinópolis - PA
                   </p>
                 </div>
               </div>

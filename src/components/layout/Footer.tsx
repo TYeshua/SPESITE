@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4">SPE UFPA</h3>
             <p className="text-gray-400 dark:text-gray-500 mb-4">
-              A Sociedade dos Engenheiros de Petróleo Seção Macaé é uma organização sem fins lucrativos 
+              A Sociedade dos Engenheiros de Petróleo Seção UFPA é uma organização sem fins lucrativos 
               comprometida com o avanço da indústria de petróleo e gás no Brasil.
             </p>
             <div className="flex space-x-4">
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-blue-500 mr-2 mt-1" />
-                <span className="text-gray-400 dark:text-gray-500">UFPA Campus Salinópolis, Rua Raimundo Santana Cruz, S/N. Bairro São Tomé - Salinópolis - PA- PA, 68721-000, Brasil</span>
+                <span className="text-gray-400 dark:text-gray-500">UFPA Campus Salinópolis, Rua Raimundo Santana Cruz, S/N. Bairro São Tomé - Salinópolis - PA, 68721-000, Brasil</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-blue-500 mr-2" />
