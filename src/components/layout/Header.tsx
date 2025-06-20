@@ -62,7 +62,15 @@ const Header: React.FC = () => {
           <button type="button" onClick={toggleDarkMode} className={`p-2 rounded-full ${isScrolled ? 'text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800' : 'text-white hover:bg-white hover:bg-opacity-10'} transition-colors`} aria-label="Alternar modo escuro">
             {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </button>
-          <Link to="/associar-se" className="bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700 transition-colors">Associar-se à SPE</Link>
+          {/* Link externo substituído */}
+          <a
+            href="https://share.google/xkHWI0HcVqrVbBtNu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700 transition-colors"
+          >
+            Associar-se à SPE
+          </a>
         </nav>
 
         {/* Mobile Buttons */}
@@ -110,7 +118,16 @@ const Header: React.FC = () => {
               <button type="button" className="flex items-center text-gray-800 dark:text-gray-200 font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                 <Globe className="h-5 w-5 mr-1" /> PT
               </button>
-              <Link to="/associar-se" onClick={() => setIsMenuOpen(false)} className="bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700 transition-colors text-center mt-4">Associar-se à SPE</Link>
+              {/* Link externo substituído */}
+              <a
+                href="https://share.google/xkHWI0HcVqrVbBtNu"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMenuOpen(false)}
+                className="bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700 transition-colors text-center mt-4"
+              >
+                Associar-se à SPE
+              </a>
             </nav>
           </div>
         </div>
