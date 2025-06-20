@@ -10,7 +10,7 @@ const SponsorsSection: React.FC = () => {
     threshold: 0.1,
   });
 
-  // Group sponsors by level
+  // Agrupar patrocinadores por nível
   const sponsorsByLevel = sponsors.reduce((acc, sponsor) => {
     if (!acc[sponsor.level]) {
       acc[sponsor.level] = [];
@@ -24,6 +24,7 @@ const SponsorsSection: React.FC = () => {
     gold: 'Patrocinadores Ouro',
     silver: 'Patrocinadores Prata',
     bronze: 'Patrocinadores Bronze',
+    apoiadores: 'Apoiadores',
   };
 
   return (
@@ -33,7 +34,7 @@ const SponsorsSection: React.FC = () => {
           ref={ref}
           variants={staggerContainer}
           initial="hidden"
-          animate={inView ? "show" : "hidden"}
+          animate={inView ? 'show' : 'hidden'}
           className="text-center mb-12"
         >
           <motion.div variants={fadeIn('up')}>
@@ -47,44 +48,51 @@ const SponsorsSection: React.FC = () => {
             </p>
           </motion.div>
         </motion.div>
-        
-        {/* Sponsors by level */}
-        {(['platinum', 'gold', 'silver', 'bronze'] as const).map((level) => 
+
+        {/* Patrocinadores por nível */}
+        {(['platinum', 'gold', 'silver', 'bronze', 'apoiadores'] as const).map((level) =>
           sponsorsByLevel[level] && (
             <div key={level} className="mb-12 last:mb-0">
-              <h4 className="text-xl font-bold text-center mb-8 text-gray-900 dark:text-white">{levelTitles[level]}</h4>
-              
-              <div 
-                className={`grid gap-8 ${
-                  level === 'platinum' 
-                    ? 'grid-cols-1 md:grid-cols-2' 
-                    : level === 'gold' 
-                    ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' 
-                    : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4'
-                }`}
-              >
-                {sponsorsByLevel[level].map((sponsor, index) => (
-                  <motion.a
-                    key={sponsor.id}
-                    href={sponsor.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    variants={fadeIn('up', index * 0.1)}
-                    initial="hidden"
-                    animate={inView ? "show" : "hidden"}
-                    className={`
-                      flex items-center justify-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-md
-                      hover:shadow-lg transition-shadow duration-300
-                      ${level === 'platinum' ? 'h-40' : level === 'gold' ? 'h-32' : 'h-24'}
-                    `}
-                  >
-                    <img 
-                      src={sponsor.logo} 
-                      alt={sponsor.name} 
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </motion.a>
-                ))}
+              <h4 className="text-xl font-bold text-center mb-8 text-gray-900 dark:text-white">
+                {levelTitles[level]}
+              </h4>
+
+              <div className="w-full flex justify-center">
+                <div
+                  className={`grid gap-8 max-w-6xl ${
+                    sponsorsByLevel[level].length === 1
+                      ? 'grid-cols-1 justify-items-center'
+                      : level === 'platinum'
+                      ? 'grid-cols-1 md:grid-cols-2'
+                      : level === 'gold'
+                      ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+                      : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4'
+                  }`}
+                >
+                  {sponsorsByLevel[level].map((sponsor, index) => (
+                    <motion.a
+                      key={sponsor.id}
+                      href={sponsor.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variants={fadeIn('up', index * 0.1)}
+                      initial="hidden"
+                      animate={inView ? 'show' : 'hidden'}
+                      className={`
+                        flex items-center justify-center text-center
+                        p-4 bg-white dark:bg-white rounded-lg shadow-md
+                        hover:shadow-lg transition-shadow duration-300
+                        min-h-[120px] w-full max-w-[220px] border-2 border-blue-700
+                      `}
+                    >
+                      <img
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        className="max-h-24 w-auto object-contain"
+                      />
+                    </motion.a>
+                  ))}
+                </div>
               </div>
             </div>
           )

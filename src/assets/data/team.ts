@@ -56,9 +56,9 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: 6,
-    name: "Thiago Yeshua",
+    name: "Indefinido",
     position: "Diretor da Tecnologia",
-    image: "Yeshua.jpg",
+    image: "interrogação.jpeg",
     bio: "Descrição",
     linkedin: "https://www.linkedin.com/in/jos%C3%A9-santos-78abb8254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",
     email: "fernanda.lima@spemacae.org"

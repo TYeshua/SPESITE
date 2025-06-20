@@ -2,65 +2,63 @@ export interface Sponsor {
   id: number;
   name: string;
   logo: string;
-  level: 'platinum' | 'gold' | 'silver' | 'bronze';
+  level: 'platinum' | 'gold' | 'silver' | 'bronze' | 'apoiadores';
   website: string;
 }
 
 export const sponsors: Sponsor[] = [
+  
   {
     id: 1,
-    name: "PetroBras",
-    logo: "https://placehold.co/300x150?text=PetroBras",
-    level: "platinum",
-    website: "https://petrobras.com.br"
-  },
-  {
-    id: 2,
-    name: "Schlumberger",
-    logo: "https://placehold.co/300x150?text=Schlumberger",
+    name: "SLB - Schlumberger",
+    logo: "SLB.jpg",
     level: "gold",
     website: "https://www.slb.com"
   },
+  
+  {
+    id: 2,
+    name: "YASS - Bebidas e Coveniência",
+    logo: "yass.png",
+    level: "apoiadores",
+    website: ""
+  },
   {
     id: 3,
-    name: "Baker Hughes",
-    logo: "https://placehold.co/300x150?text=Baker+Hughes",
-    level: "gold",
-    website: "https://www.bakerhughes.com"
+    name: "Farolzinho Sorvetes",
+    logo: "farolzinho.png",
+    level: "apoiadores",
+    website: ""
   },
   {
     id: 4,
-    name: "Halliburton",
-    logo: "https://placehold.co/300x150?text=Halliburton",
-    level: "gold",
-    website: "https://www.halliburton.com"
+    name: "HortSal - Frutas & Verduras",
+    logo: "hortsal.png",
+    level: "apoiadores",
+    website: ""
   },
   {
     id: 5,
-    name: "TechnipFMC",
-    logo: "https://placehold.co/300x150?text=TechnipFMC",
-    level: "silver",
-    website: "https://www.technipfmc.com"
+    name: "NatuCafé - Naturalmente Saboroso",
+    logo: "natucafé.png",
+    level: "apoiadores",
+    website: ""
   },
+
   {
     id: 6,
-    name: "NOV",
-    logo: "https://placehold.co/300x150?text=NOV",
-    level: "silver",
-    website: "https://www.nov.com"
+    name: "PrimeFit - Academia",
+    logo: "primefit.png",
+    level: "apoiadores",
+    website: ""
   },
+
   {
     id: 7,
-    name: "Wood Group",
-    logo: "https://placehold.co/300x150?text=Wood+Group",
-    level: "bronze",
-    website: "https://www.woodplc.com"
+    name: "Casemirão - Burger & Steak",
+    logo: "casemirao.png",
+    level: "apoiadores",
+    website: ""
   },
-  {
-    id: 8,
-    name: "Subsea 7",
-    logo: "https://placehold.co/300x150?text=Subsea+7",
-    level: "bronze",
-    website: "https://www.subsea7.com"
-  }
+
 ];
