@@ -22,29 +22,12 @@ export const events: Event[] = [
   },
   {
     id: 2,
-    title: "Indefinido",
-    date: "00/00/0000",
-    location: "---",
-    image: "",
-    description: "Sem descrição",
-    category: "workshop"
-  },
-  {
-    id: 3,
-    title: "Indefinido",
-    date: "00/00/0000",
-    location: "---",
-    image: "",
-    description: "Sem descrição",
-    category: "workshop"
-  },
-  {
-    id: 4,
-    title: "Indefinido",
-    date: "00/00/0000",
-    location: "---",
-    image: "",
-    description: "Sem descrição",
-    category: "workshop"
+    title: "III EquiPetro",
+    date: "10/09/2025",
+    location: "Casa da Cultura, Salinópolis",
+    image: "equipetro.png",
+    description: "O EquiPetro é um encontro técnico-científico que tem por objetivo reunir pesquisadores para discutir e compartilhar conhecimento e experiência na área de equilíbrio de fases aplicado aos desafios envolvidos na produção de petróleo, energia e questões ambientais associadas.",
+    category: "conference",
+    externalUrl: "https://iiiequipetro.salinopolis.ufpa.br/"
   }
 ];

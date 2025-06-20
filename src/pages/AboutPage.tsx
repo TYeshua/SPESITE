@@ -27,7 +27,7 @@ const AboutPage: React.FC = () => {
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24">
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-900 skew-y-3 transform origin-top-left z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-900 transform origin-top-left z-0"></div>
         
         <div className="relative z-10 container mx-auto px-4">
           <motion.div
@@ -178,7 +178,7 @@ const AboutPage: React.FC = () => {
               {/* 2010 */}
               <div className="relative flex flex-col md:flex-row items-center">
                 <div className="flex-1 md:text-right md:pr-8 mb-4 md:mb-0">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">2995</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">1995</h3>
                   <p className="text-gray-600 dark:text-gray-300">
                     Criação da Seção Macaé, com missão de disseminar o conhecimento técnico em nossa indústria estimulando o networking promovendo eventos de alto nível.
                   </p>
@@ -197,7 +197,7 @@ const AboutPage: React.FC = () => {
               <div className="relative flex flex-col md:flex-row items-center">
                 <div className="flex-1 md:text-right md:pr-8 order-1 md:order-1 mb-4 md:mb-0">
                   <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md md:mt-0">
-                    <span className="text-blue-600 dark:text-blue-400 font-bold">Transformação Digital</span>
+                    <span className="text-blue-600 dark:text-blue-400 font-bold">Seção UFPA</span>
                   </div>
                 </div>
                 

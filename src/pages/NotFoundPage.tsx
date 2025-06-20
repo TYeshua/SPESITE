@@ -4,7 +4,7 @@ import Button from '../components/ui/Button';
 
 const NotFoundPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-blue-500 dark:bg-gray-900 px-4">
       <div className="text-center">
         <h1 className="text-9xl font-bold text-blue-600 dark:text-blue-400">Em breve</h1>
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Página Não Encontrada</h2>

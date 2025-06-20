@@ -27,7 +27,7 @@ const ContactSection: React.FC = () => {
               Fale Conosco
             </h3>
             <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
-              Tem dúvidas ou quer saber mais sobre a SPE Macaé? Adoraríamos ouvir de você.
+              Tem dúvidas ou quer saber mais sobre a SPE UFPA? Adoraríamos ouvir de você.
               Entre em contato conosco usando o formulário abaixo ou nos contate diretamente.
             </p>
           </motion.div>
