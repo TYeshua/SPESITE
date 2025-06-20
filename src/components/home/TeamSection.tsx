@@ -90,11 +90,6 @@ const TeamSection: React.FC = () => {
           animate={inView ? "show" : "hidden"}
           className="text-center mt-12"
         >
-          <Link to="/sobre/diretoria">
-            <Button variant="primary">
-              Ver Toda a Diretoria
-            </Button>
-          </Link>
         </motion.div>
       </div>
     </section>

@@ -16,7 +16,7 @@ export const teamMembers: TeamMember[] = [
     image: "AnVA.jpg",
     bio: "Descrição",
     linkedin: "https://www.linkedin.com/in/andresa-valente?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ",
-    email: "carlos.silva@spemacae.org"
+    email: ""
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ export const teamMembers: TeamMember[] = [
     image: "Claudio.jpg",
     bio: "Descrição",
     linkedin: "https://www.linkedin.com/in/cl%C3%A1udio-lucas-a7186020/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-    email: "rafael.costa@spemacae.org"
+    email: ""
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ export const teamMembers: TeamMember[] = [
     image: "AnaB.jpg",
     bio: "Descrição",
     linkedin: "https://www.linkedin.com/in/ana-clara-nascimento-7a4034255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",
-    email: "julia.santos@spemacae.org"
+    email: ""
   },
   {
     id: 5,
@@ -52,15 +52,15 @@ export const teamMembers: TeamMember[] = [
     image: "Braga.jpg",
     bio: "Descrição",
     linkedin: "https://www.linkedin.com/in/gabriel-braga-975990235?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",
-    email: "marco.almeida@spemacae.org"
+    email: ""
   },
   {
     id: 6,
-    name: "Indefinido",
+    name: "Thiago Yeshua",
     position: "Diretor da Tecnologia",
-    image: "interrogação.jpeg",
+    image: "Yeshua.jpg",
     bio: "Descrição",
-    linkedin: "https://www.linkedin.com/in/jos%C3%A9-santos-78abb8254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",
-    email: "fernanda.lima@spemacae.org"
+    linkedin: "https://www.linkedin.com/in/thiago-yeshua-05424a303?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ",
+    email: ""
   }
 ];

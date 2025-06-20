@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Import pages
 import HomePage from './pages/HomePage';
@@ -8,7 +8,6 @@ import EventsPage from './pages/EventsPage';
 import PastEventsPage from './pages/PastEventsPage';
 import ContactPage from './pages/ContactPage';
 import NotFoundPage from './pages/NotFoundPage';
-
 
 // Import components
 import Layout from './components/layout/Layout';
