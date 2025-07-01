@@ -15,7 +15,7 @@ const HeroSection: React.FC = () => {
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-      </div>
+      </div>
       
       {/* Content */}
       <div className="relative h-full container mx-auto px-4 flex flex-col justify-center">
@@ -25,13 +25,13 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="max-w-2xl"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="mt-20 text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Society of Petroleum Engineers <br />
-            <span className="block text-blue-400">Seção UFPA</span>
+            <span className="block text-blue-400">Capítulo UFPA</span>
           </h1>
           
           <p className="text-xl text-gray-200 mb-8">
-            Conectando profissionais, compartilhando conhecimento e avançando a indústria de petróleo e gás no Brasil desde 1990.
+            Conectando profissionais, compartilhando conhecimento e avançando a indústria de petróleo, gás e energia no Brasil desde 1990.
           </p>
           
           <div className="flex flex-wrap gap-4">
@@ -40,11 +40,20 @@ const HeroSection: React.FC = () => {
                 Saiba Mais
               </Button>
             </Link>
-            <Link to="/associar-se">
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:bg-opacity-10">
+            <a
+              href="https://www.spe.org/appsaccess/login/jsp/siteRegistration.jsp?ERIGHTS_TARGET=https://www.spe.org/auth/realms/SPE/protocol/openid-connect/auth?response_type=code&scope=openid&client_id=www.spe.org&state=SvJYIe1AF8-yvS6rWh64sYmy5L4&redirect_uri=https%3A%2F%2Fwww.spe.org%2Foidc_redirect%2Fprotected&nonce=ZzyIEmNZgd0khK3TRqFE1h8WoDZCb3MiHkdwPKM6MRg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:bg-opacity-10"
+              >
                 Associar-se à SPE
               </Button>
-            </Link>
+            </a>
+
           </div>
         </motion.div>
       </div>

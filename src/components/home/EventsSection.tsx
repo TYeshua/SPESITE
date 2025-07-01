@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
-import { Calendar, MapPin } from 'lucide-react';
+import { Calendar, MapPin, CheckCircle } from 'lucide-react';
 import { events } from '../../assets/data/events';
 import Card from '../ui/Card';
 import Button from '../ui/Button';
@@ -14,11 +14,11 @@ const EventsSection: React.FC = () => {
     threshold: 0.1,
   });
 
-  const categoryLabels = {
+  const categoryLabels: Record<string, string> = {
     conference: 'Conferência',
     workshop: 'Workshop',
     webinar: 'Webinar',
-    networking: 'Networking'
+    networking: 'Networking',
   };
 
   return (
@@ -28,13 +28,13 @@ const EventsSection: React.FC = () => {
           ref={ref}
           variants={staggerContainer}
           initial="hidden"
-          animate={inView ? "show" : "hidden"}
+          animate={inView ? 'show' : 'hidden'}
           className="text-center mb-12"
         >
           <motion.div variants={fadeIn('up')}>
             <h2 className="text-blue-600 dark:text-blue-400 font-medium mb-2">EVENTOS</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-              Esteja por dentro dos nossos eventos
+              Esteja por dentro dos eventos realizados por nós
             </h3>
             <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
               Conecte-se com profissionais da indústria, aprenda com especialistas e expanda seu conhecimento
@@ -49,7 +49,7 @@ const EventsSection: React.FC = () => {
               key={event.id}
               variants={fadeIn('up', index * 0.1)}
               initial="hidden"
-              animate={inView ? "show" : "hidden"}
+              animate={inView ? 'show' : 'hidden'}
             >
               <Card hoverEffect className="h-full flex flex-col bg-white dark:bg-gray-700">
                 <div className="relative h-48 overflow-hidden">
@@ -73,9 +73,13 @@ const EventsSection: React.FC = () => {
                       <Calendar className="h-4 w-4 mr-2" />
                       <span className="text-sm">{event.date}</span>
                     </div>
-                    <div className="flex items-center text-gray-600 dark:text-gray-300 mb-4">
+                    <div className="flex items-center text-gray-600 dark:text-gray-300 mb-2">
                       <MapPin className="h-4 w-4 mr-2" />
                       <span className="text-sm">{event.location}</span>
+                    </div>
+                    <div className="flex items-center text-gray-600 dark:text-gray-300 mb-4">
+                      <CheckCircle className="h-4 w-4 mr-2" />
+                      <span className="text-sm">{event.ajudance}</span>
                     </div>
                     <p className="text-gray-600 dark:text-gray-300 text-sm">
                       {event.description}
@@ -109,13 +113,11 @@ const EventsSection: React.FC = () => {
         <motion.div
           variants={fadeIn('up')}
           initial="hidden"
-          animate={inView ? "show" : "hidden"}
+          animate={inView ? 'show' : 'hidden'}
           className="text-center mt-12"
         >
           <Link to="/eventos">
-            <Button variant="primary">
-              Ver Todos os Eventos
-            </Button>
+            <Button variant="primary">Ver Todos os Eventos</Button>
           </Link>
         </motion.div>
       </div>
