@@ -64,7 +64,6 @@ const SponsorsSection: React.FC = () => {
       setLevelIndex((prev) => prev + 1);
       setPageIndex(0);
     } else {
-      // Reinicia do começo
       setLevelIndex(0);
       setPageIndex(0);
     }
@@ -82,7 +81,6 @@ const SponsorsSection: React.FC = () => {
     }
   };
 
-  // ⏱ Transição automática a cada 4 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
@@ -98,61 +96,60 @@ const SponsorsSection: React.FC = () => {
           <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
             Parceiros que Apoiam Nossa Missão
           </h3>
-          <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
-            
-          </p>
+          <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300"></p>
         </div>
 
         <div className="mb-8 text-center">
-  <h4 className={`text-xl font-bold mb-4 ${levelColors[currentLevel]}`}>
-    {levelTitles[currentLevel]}
-  </h4>
-</div>
+          <h4 className={`text-xl font-bold mb-4 ${levelColors[currentLevel]}`}>
+            {levelTitles[currentLevel]}
+          </h4>
+        </div>
 
-<div className="relative overflow-hidden" style={{ height: 160 }}>
-  <AnimatePresence initial={false} custom={direction}>
-    <motion.div
-      key={`${levelIndex}-${pageIndex}`}
-      custom={direction}
-      variants={variants}
-      initial="enter"
-      animate="center"
-      exit="exit"
-      className="absolute top-0 left-0 w-full h-full flex justify-center gap-6"
-    >
-      {pages[pageIndex]?.map((sponsor) => (
-        <a
-          key={sponsor.id}
-          href={sponsor.website}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-shrink-0 w-[200px] h-[120px] bg-white dark:bg-white border-2 border-blue-700 rounded-lg shadow-md flex items-center justify-center hover:shadow-lg transition-shadow"
-        >
-          <img
-            src={sponsor.logo}
-            alt={sponsor.name}
-            className="max-h-20 w-auto object-contain"
-          />
-        </a>
-      ))}
-    </motion.div>
-  </AnimatePresence>
+        <div className="relative overflow-hidden" style={{ height: 160 }}>
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.div
+              key={`${levelIndex}-${pageIndex}`}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              className="absolute top-0 left-0 w-full h-full flex justify-center gap-6"
+            >
+              {pages[pageIndex]?.map((sponsor) => (
+  <a
+  key={sponsor.id}
+  href={sponsor.website}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex-shrink-0 w-[100px] sm:w-[200px] h-[80px] sm:h-[120px] bg-white dark:bg-white border-2 border-blue-700 rounded-lg shadow-md flex items-center justify-center hover:shadow-lg transition-shadow"
+>
+  <img
+    src={sponsor.logo}
+    alt={sponsor.name}
+    className="max-h-12 sm:max-h-20 w-auto object-contain"
+  />
+</a>
 
-  {/* Navegação manual */}
-  <button
-    onClick={handlePrev}
-    className="absolute top-1/2 left-2 -translate-y-1/2 text-gray-400 hover:text-gray-700 dark:hover:text-white text-2xl z-10"
-  >
-    &larr;
-  </button>
-  <button
-    onClick={handleNext}
-    className="absolute top-1/2 right-2 -translate-y-1/2 text-gray-400 hover:text-gray-700 dark:hover:text-white text-2xl z-10"
-  >
-    &rarr;
-  </button>
-</div>
 
+              ))}
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Navegação manual */}
+          <button
+            onClick={handlePrev}
+            className="absolute top-1/2 left-2 -translate-y-1/2 text-gray-400 hover:text-gray-700 dark:hover:text-white text-2xl z-10"
+          >
+            &larr;
+          </button>
+          <button
+            onClick={handleNext}
+            className="absolute top-1/2 right-2 -translate-y-1/2 text-gray-400 hover:text-gray-700 dark:hover:text-white text-2xl z-10"
+          >
+            &rarr;
+          </button>
+        </div>
       </div>
     </section>
   );
