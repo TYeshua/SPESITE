@@ -48,7 +48,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: 5,
     name: "Gabriel Braga",
-    position: "Diretor de Comunicação e Eventos",
+    position: "Acessor de Comunicação e Eventos",
     image: "Braga.jpg",
     bio: "Descrição",
     linkedin: "https://www.linkedin.com/in/gabriel-braga-975990235?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",

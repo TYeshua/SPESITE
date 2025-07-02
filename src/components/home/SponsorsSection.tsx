@@ -89,7 +89,7 @@ const SponsorsSection: React.FC = () => {
   }, [levelIndex, pageIndex]);
 
   return (
-    <section className="py-20 dark:bg-gray-900">
+    <section className="py-10 sm:py-5 lg:py-7 dark:bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-blue-600 dark:text-blue-400 font-medium mb-2">NOSSOS PATROCINADORES</h2>
@@ -130,7 +130,6 @@ const SponsorsSection: React.FC = () => {
     className="max-h-12 sm:max-h-20 w-auto object-contain"
   />
 </a>
-
 
               ))}
             </motion.div>

@@ -43,8 +43,8 @@ const TeamSection: React.FC = () => {
               initial="hidden"
               animate={inView ? "show" : "hidden"}
             >
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group">
-                <div className="relative h-64 overflow-hidden">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group border-2 border-blue-600 dark:border-cyan-500">
+                <div className="relative h-72 overflow-hidden">
                   <img 
                     src={member.image} 
                     alt={member.name} 
@@ -95,7 +95,5 @@ const TeamSection: React.FC = () => {
     </section>
   );
 };
-
-
 
 export default TeamSection;
