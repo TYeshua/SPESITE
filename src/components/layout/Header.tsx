@@ -84,44 +84,50 @@ const Header: React.FC = () => {
             {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </button>
           <button type="button" onClick={toggleMenu} className="text-2xl focus:outline-none">
-            <Menu className={`h-6 w-6 ${isScrolled ? 'text-gray-800 dark:text-gray-200' : 'text-white'}`} />
+            {isMenuOpen ? (
+              <X className={`h-6 w-6 ${isScrolled ? 'text-gray-800 dark:text-gray-200' : 'text-white'}`} />
+            ) : (
+              <Menu className={`h-6 w-6 ${isScrolled ? 'text-gray-800 dark:text-gray-200' : 'text-white'}`} />
+            )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Sidebar Menu sem overlay escuro */}
-      <div className="fixed inset-y-0 right-0 z-40 lg:hidden">
-        <div
-          className={`
-            w-2/3 max-w-xs h-full bg-white dark:bg-gray-900 p-6 shadow-lg
-            transform transition-transform duration-300
-            ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}
-          `}
-        >
-          <button
-            onClick={() => setIsMenuOpen(false)}
-            className="flex items-center justify-end mb-6 w-full text-gray-700 dark:text-gray-300"
+      {/* Condicional: renderiza menu lateral somente se aberto */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-40 flex justify-end lg:hidden">
+          <div
+            className={`
+              w-2/3 max-w-xs h-full bg-white dark:bg-gray-900 p-6 shadow-lg
+              transform transition-transform duration-300
+              translate-x-0
+            `}
           >
-            <X className="h-6 w-6" />
-          </button>
-
-          <nav className="flex flex-col space-y-6">
-            <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-gray-800 dark:text-gray-200">Início</Link>
-            <Link to="/sobre" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-gray-800 dark:text-gray-200">Sobre a SPE</Link>
-            <Link to="/eventos" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-gray-800 dark:text-gray-200">Próximos Eventos</Link>
-            <Link to="/eventos/passados" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-gray-800 dark:text-gray-200">Eventos Passados</Link>
-            <Link to="/contato" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-gray-800 dark:text-gray-200">Contato</Link>
-            <a
-              href="https://www.spe.org/appsaccess/login/jsp/siteRegistration.jsp?ERIGHTS_TARGET=..."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lg font-medium text-blue-600 hover:underline"
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center justify-end mb-6 w-full text-gray-700 dark:text-gray-300"
             >
-              Associar-se à SPE
-            </a>
-          </nav>
+              <X className="h-6 w-6" />
+            </button>
+
+            <nav className="flex flex-col space-y-6">
+              <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-gray-800 dark:text-gray-200">Início</Link>
+              <Link to="/sobre" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-gray-800 dark:text-gray-200">Sobre a SPE</Link>
+              <Link to="/eventos" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-gray-800 dark:text-gray-200">Próximos Eventos</Link>
+              <Link to="/eventos/passados" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-gray-800 dark:text-gray-200">Eventos Passados</Link>
+              <Link to="/contato" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-gray-800 dark:text-gray-200">Contato</Link>
+              <a
+                href="https://www.spe.org/appsaccess/login/jsp/siteRegistration.jsp?ERIGHTS_TARGET=..."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-medium text-blue-600 hover:underline"
+              >
+                Associar-se à SPE
+              </a>
+            </nav>
+          </div>
         </div>
-      </div>
+      )}
     </header>
   );
 };
