@@ -36,7 +36,7 @@ const TeamSection: React.FC = () => {
         </motion.div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teamMembers.slice(0, 6).map((member, index) => (
+          {teamMembers.slice(0, 8).map((member, index) => (
             <motion.div
               key={member.id}
               variants={fadeIn('up', index * 0.1)}
@@ -75,7 +75,7 @@ const TeamSection: React.FC = () => {
                 <div className="p-6">
                   <h4 className="font-bold text-xl text-gray-900 dark:text-white">{member.name}</h4>
                   <p className="text-blue-600 dark:text-blue-400 mb-4">{member.position}</p>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-3">
+                  <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-3 text-justify">
                     {member.bio}
                   </p>
                 </div>

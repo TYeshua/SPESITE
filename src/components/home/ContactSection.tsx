@@ -110,73 +110,83 @@ const ContactSection: React.FC = () => {
           </motion.div>
           
           {/* Contact Form */}
-          <motion.div
-            variants={fadeIn('left')}
-            initial="hidden"
-            animate={inView ? "show" : "hidden"}
-          >
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
-              <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Envie-nos uma Mensagem</h4>
-              
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-                      Seu Nome
-                    </label>
-                    <input 
-                      type="text" 
-                      id="name" 
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-                      Seu E-mail
-                    </label>
-                    <input 
-                      type="email" 
-                      id="email" 
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                      required
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="subject" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-                    Assunto
-                  </label>
-                  <input 
-                    type="text" 
-                    id="subject" 
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-                    Mensagem
-                  </label>
-                  <textarea 
-                    id="message" 
-                    rows={5}
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                    required
-                  ></textarea>
-                </div>
-                
-                <div>
-                  <Button type="submit" variant="primary" className="w-full">
-                    Enviar Mensagem
-                  </Button>
-                </div>
-              </form>
-            </div>
-          </motion.div>
+<motion.div
+  variants={fadeIn('left')}
+  initial="hidden"
+  animate={inView ? "show" : "hidden"}
+>
+  <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+    <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Envie-nos uma Mensagem</h4>
+    
+    <form 
+      action="https://formspree.io/f/xblybqab" 
+      method="POST" 
+      className="space-y-6"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
+            Seu Nome
+          </label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name"
+            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+            required
+          />
+        </div>
+        
+        <div>
+          <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
+            Seu E-mail
+          </label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email"
+            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+            required
+          />
+        </div>
+      </div>
+      
+      <div>
+        <label htmlFor="subject" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
+          Assunto
+        </label>
+        <input 
+          type="text" 
+          id="subject" 
+          name="subject"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+          required
+        />
+      </div>
+      
+      <div>
+        <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
+          Mensagem
+        </label>
+        <textarea 
+          id="message" 
+          name="message"
+          rows={5}
+          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+          required
+        ></textarea>
+      </div>
+      
+      <div>
+        <Button type="submit" variant="primary" className="w-full">
+          Enviar Mensagem
+        </Button>
+      </div>
+    </form>
+  </div>
+</motion.div>
+
+
         </div>
       </div>
     </section>

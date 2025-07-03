@@ -28,7 +28,7 @@ export const events: Event[] = [
     date: "10/09/2025",
     location: "Casa da Cultura, Salinópolis",
     ajudance: "Apoio",
-    image: "equipetro.png",
+    image: "equip2.jpg",
     description: "O EquiPetro é um encontro técnico-científico que tem por objetivo reunir pesquisadores para discutir e compartilhar conhecimento e experiência na área de equilíbrio de fases aplicado aos desafios envolvidos na produção de petróleo, energia e questões ambientais associadas.",
     category: "conference",
     externalUrl: "https://iiiequipetro.salinopolis.ufpa.br/"

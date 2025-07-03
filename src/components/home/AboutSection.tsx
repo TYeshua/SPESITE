@@ -28,8 +28,8 @@ const AboutSection: React.FC = () => {
           >
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="csal.png" 
-                alt="salinas" 
+                src="primeiroano.jpg" 
+                alt="amazontech" 
                 className="w-full h-auto"
               />
             </div>
