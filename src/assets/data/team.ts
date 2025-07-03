@@ -40,7 +40,7 @@ export const teamMembers: TeamMember[] = [
     id: 4,
     name: "Ana Nascimento",
     position: "Diretora de Marketing",
-    image: "AnaB.jpg",
+    image: "ana2.DNG",
     bio: "Descrição",
     linkedin: "https://www.linkedin.com/in/ana-clara-nascimento-7a4034255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",
     email: ""
