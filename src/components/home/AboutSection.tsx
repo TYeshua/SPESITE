@@ -51,8 +51,8 @@ const AboutSection: React.FC = () => {
               </h3>
             </div>
             
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              A Sociedade dos Engenheiros de Petróleo (SPE) Seção UFPA foi estabelecida em 2024 para servir 
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+              A Sociedade dos Engenheiros de Petróleo (SPE) Seção UFPA foi estabelecida em 2024 para servir estudantes e
               profissionais da indústria de petróleo e gás na Universidade Federal do Pará na região de Salinópolis e em todo o Brasil. Nossa missão 
               é coletar, disseminar e trocar conhecimento técnico sobre exploração, desenvolvimento e produção 
               de recursos petrolíferos.

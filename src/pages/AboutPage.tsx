@@ -70,7 +70,7 @@ const AboutPage: React.FC = () => {
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Nossa Missão e Visão</h2>
               
               <p className="text-gray-700 dark:text-gray-300 mb-6">
-                A Sociedade dos Engenheiros de Petróleo (SPE) Seção UFPA foi estabelecida em 2024, sendo um projeto composto por estudantes so setor do petróleo, gás e engeria que buscam trazer o universo profissional para
+                A Sociedade dos Engenheiros de Petróleo (SPE) Capítulo UFPA foi estabelecida em 2024, sendo um projeto composto por estudantes so setor do petróleo, gás e engeria que buscam trazer o universo profissional para
                 o ambiente acadêmico, disseminando conhecimento em todos os aspectos de nosso setor, resultando no desenvolvimento escalar de nossos 
                 membros e ampliando suas perspectivas.
               </p>
@@ -197,7 +197,7 @@ const AboutPage: React.FC = () => {
               <div className="relative flex flex-col md:flex-row items-center">
                 <div className="flex-1 md:text-right md:pr-8 order-1 md:order-1 mb-4 md:mb-0">
                   <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md md:mt-0">
-                    <span className="text-blue-600 dark:text-blue-400 font-bold">Seção UFPA</span>
+                    <span className="text-blue-600 dark:text-blue-400 font-bold">Capítulo UFPA</span>
                   </div>
                 </div>
                 
