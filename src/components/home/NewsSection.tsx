@@ -12,7 +12,8 @@ const variants = {
     x: 0,
     opacity: 1,
     transition: { duration: 0.6, ease: 'easeInOut' },
-  },
+  }, // <-- Add comma here
+  // Animação de saída
   exit: (direction: number) => ({
     x: direction < 0 ? 300 : -300,
     opacity: 0,
@@ -45,7 +46,7 @@ const newsList = [
   },
   {
     id: 4,
-    title: "Descrição",
+    title: "Título", // <- Corrigido aqui
     image: "/images/news4.jpg",
     description: "Descrição",
     link: "https://example.com/congresso",
@@ -59,17 +60,16 @@ const newsList = [
   },
 ];
 
-// 🔸 Hook para detectar largura da tela e ajustar número de cards
 const useResponsiveCards = () => {
   const [cardsPerPage, setCardsPerPage] = useState(3);
 
   useEffect(() => {
     const updateCards = () => {
       const width = window.innerWidth;
-      if (width < 1024) {
-        setCardsPerPage(2); // tablets e celulares
+      if (width < 640) {
+        setCardsPerPage(1); // mobile
       } else {
-        setCardsPerPage(3); // desktops
+        setCardsPerPage(3); // desktop
       }
     };
 
@@ -136,7 +136,7 @@ const NewsSection: React.FC = () => {
                 <Card
                   key={news.id}
                   hoverEffect
-                  className="w-[300px] sm:w-[320px] md:w-[340px] bg-white dark:bg-gray-700 flex flex-col border-2 border-blue-600 dark:border-cyan-500" 
+                  className="w-[300px] sm:w-[320px] md:w-[340px] bg-white dark:bg-gray-700 flex flex-col border-2 border-blue-600 dark:border-cyan-500"
                 >
                   <div className="relative h-40 overflow-hidden rounded-t-lg border border-blue-600 dark:border-cyan-500">
                     <img
@@ -170,16 +170,32 @@ const NewsSection: React.FC = () => {
             </motion.div>
           </AnimatePresence>
 
-          {/* Botões de navegação */}
+          {/* Botões de navegação - Desktop */}
           <button
             onClick={handlePrev}
-            className="absolute top-1/2 left-2 -translate-y-1/2 text-gray-400 hover:text-gray-700 dark:hover:text-white text-2xl z-10"
+            className="hidden sm:block absolute top-1/2 left-2 -translate-y-1/2 text-gray-400 hover:text-gray-700 dark:hover:text-white text-2xl z-10"
           >
             &larr;
           </button>
           <button
             onClick={handleNext}
-            className="absolute top-1/2 right-2 -translate-y-1/2 text-gray-400 hover:text-gray-700 dark:hover:text-white text-2xl z-10"
+            className="hidden sm:block absolute top-1/2 right-2 -translate-y-1/2 text-gray-400 hover:text-gray-700 dark:hover:text-white text-2xl z-10"
+          >
+            &rarr;
+          </button>
+        </div>
+
+        {/* Botões de navegação - Mobile */}
+        <div className="sm:hidden flex justify-center mt-6">
+          <button
+            onClick={handlePrev}
+            className="mr-4 text-gray-500 hover:text-gray-800 dark:hover:text-white text-xl"
+          >
+            &larr;
+          </button>
+          <button
+            onClick={handleNext}
+            className="text-gray-500 hover:text-gray-800 dark:hover:text-white text-xl"
           >
             &rarr;
           </button>
