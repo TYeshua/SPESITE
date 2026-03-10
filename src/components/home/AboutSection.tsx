@@ -23,7 +23,7 @@ const AboutSection: React.FC = () => {
           animate={inView ? "show" : "hidden"}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
         >
-          {/* Image side qaaaaa*/}
+          {/* Image side */}
           <motion.div 
             variants={fadeIn('right')}
             className="relative mb-12 lg:mb-0"

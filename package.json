@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "homepage": "https://tyeshua.github.io/spesite",
-    "base": "/spesite/",
+    "homepage": "https://tyeshua.github.io/SPESITE",
+    "base": "/SPESITE/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "lint": "eslint .",

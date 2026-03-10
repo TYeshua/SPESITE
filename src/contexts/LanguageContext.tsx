@@ -46,7 +46,7 @@ const translations = {
     'about.vision_title': 'Nossa Visão',
     'about.vision_desc': 'Ser o principal capítulo estudantil de SPE do Brasil, referência em inovação e desenvolvimento profissional.',
     'about.btn': 'Saiba Mais',
-    'about.caption_title': 'SPE UFPA 2024',
+    'about.caption_title': 'SPE UFPA 2025',
     'about.caption_desc': 'Nosso primeiro ano de atividades',
     // Legacy keys kept for backward compatibility
     'about.btn_learn': 'Saiba Mais',
@@ -223,7 +223,7 @@ const translations = {
     'about.vision_title': 'Our Vision',
     'about.vision_desc': 'To be the leading SPE student chapter in Brazil, a benchmark in innovation and professional development.',
     'about.btn': 'Learn More',
-    'about.caption_title': 'SPE UFPA 2024',
+    'about.caption_title': 'SPE UFPA 2025',
     'about.caption_desc': 'Our first year of activities',
     // Legacy keys
     'about.btn_learn': 'Learn More',

@@ -45,7 +45,7 @@ const Header: React.FC = () => {
       <button 
         type="button" 
         onClick={toggleLanguage}
-        className={`flex items-center font-medium ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-600'} transition-colors text-sm md:mr-16`}
+        className={`flex items-center font-medium ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-600'} transition-colors text-sm md:mr-4`}
       >
         <Globe className="h-5 w-5 mr-1" /> {language === 'pt' ? 'EN' : 'PT'}
       </button>
@@ -83,22 +83,17 @@ const Header: React.FC = () => {
   );
 
   const leftNode = (
-    <Link to="/" className="md:hidden flex items-center">
+    <Link to="/" className="flex items-center">
       <img 
         src="./spefundo.png" 
         alt="SPE Logo" 
-        className={`h-[70px] w-[120px] sm:h-[80px] sm:w-[140px] object-contain ${!isDarkMode ? 'bg-gray-900 rounded-md p-1' : ''}`} 
+        className={`h-[70px] w-[120px] sm:h-[80px] sm:w-[140px] md:h-[120px] md:w-[200px] object-contain ${!isDarkMode ? 'bg-gray-900 rounded-md p-1' : ''}`} 
       />
     </Link>
   );
 
   const desktopCombinedLogoNode = (
     <Link to="/" className="hidden md:flex items-center relative">
-      <img 
-        src="/spefundo.png" 
-        alt="SPE Logo" 
-        className={`absolute right-full mr-2 h-[160px] w-[250px] object-contain ${!isDarkMode ? 'bg-gray-900 rounded-lg p-2' : ''}`} 
-      />
       <Logo isScrolled={!isDarkMode} />
     </Link>
   );
