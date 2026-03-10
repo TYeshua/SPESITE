@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const Footer: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <footer className="bg-gray-900 dark:bg-gray-950 text-white">
       <div className="container mx-auto px-4 py-12">
@@ -11,8 +13,7 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4">SPE UFPA</h3>
             <p className="text-gray-400 dark:text-gray-500 mb-4">
-              A Sociedade dos Engenheiros de Petróleo Seção UFPA é uma organização sem fins lucrativos 
-              comprometida com o avanço da indústria de petróleo e gás no Brasil.
+              {t('footer.about')}
             </p>
             <div className="flex space-x-4">
               <a href="https://www.instagram.com/spe.ufpa?igsh=N3p3NTc3OWRiY3Fw" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors" aria-label="Instagram">
@@ -26,29 +27,29 @@ const Footer: React.FC = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Links Rápidos</h3>
+            <h3 className="text-xl font-semibold mb-4">{t('footer.quick_links')}</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">Início</Link>
+                <Link to="/" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">{t('nav.more.home')}</Link>
               </li>
               <li>
-                <Link to="/sobre" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">Sobre Nós</Link>
+                <Link to="/sobre" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">{t('footer.about_us')}</Link>
               </li>
               <li>
-                <Link to="/eventos" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">Eventos</Link>
+                <Link to="/eventos" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">{t('nav.events')}</Link>
               </li>
               <li>
-                <Link to="/contato" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">Contato</Link>
+                <Link to="/contato" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">{t('nav.more.contact')}</Link>
               </li>
               <li>
-                <Link to="/associar-se" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">Associar-se à SPE</Link>
+                <Link to="/associar-se" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">{t('nav.join')}</Link>
               </li>
             </ul>
           </div>
           
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Informações de Contato</h3>
+            <h3 className="text-xl font-semibold mb-4">{t('footer.contact_info')}</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-blue-500 mr-2 mt-1" />
@@ -67,14 +68,14 @@ const Footer: React.FC = () => {
           
           {/* Newsletter */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Newsletter</h3>
+            <h3 className="text-xl font-semibold mb-4">{t('footer.newsletter')}</h3>
             <p className="text-gray-400 dark:text-gray-500 mb-4">
-              Inscreva-se em nossa newsletter para receber as últimas atualizações.
+              {t('footer.newsletter_desc')}
             </p>
             <form className="space-y-2">
               <input 
                 type="email" 
-                placeholder="Seu endereço de e-mail" 
+                placeholder={t('footer.newsletter_placeholder')}
                 className="w-full px-4 py-2 rounded-md bg-gray-800 dark:bg-gray-900 border border-gray-700 dark:border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
@@ -82,7 +83,7 @@ const Footer: React.FC = () => {
                 type="submit" 
                 className="w-full bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700 transition-colors"
               >
-                Inscrever-se
+                {t('footer.newsletter_btn')}
               </button>
             </form>
           </div>

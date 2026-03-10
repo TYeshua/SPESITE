@@ -4,8 +4,10 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import Button from '../ui/Button';
 import { fadeIn, staggerContainer } from '../../utils/animations';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const AboutSection: React.FC = () => {
+  const { t } = useLanguage();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -34,8 +36,8 @@ const AboutSection: React.FC = () => {
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
-              <p className="text-blue-600 dark:text-blue-400 font-bold text-xl">1° Ano</p>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">Um começo com Excelência</p>
+              <p className="text-blue-600 dark:text-blue-400 font-bold text-xl">{t('about.caption_title')}</p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">{t('about.caption_desc')}</p>
             </div>
           </motion.div>
           
@@ -45,37 +47,34 @@ const AboutSection: React.FC = () => {
             className="space-y-6"
           >
             <div>
-              <h2 className="text-blue-600 dark:text-blue-400 font-medium mb-2">SOBRE A SPE UFPA</h2>
+              <h2 className="text-blue-600 dark:text-blue-400 font-medium mb-2">{t('about.subtitle')}</h2>
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                Avançando o Conhecimento Técnico em Petróleo e Gás
+                {t('about.title')}
               </h3>
             </div>
             
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
-              A Sociedade dos Engenheiros de Petróleo (SPE) Seção UFPA foi estabelecida em 2024 para servir estudantes e
-              profissionais da indústria de petróleo e gás na Universidade Federal do Pará na região de Salinópolis e em todo o Brasil. Nossa missão 
-              é coletar, disseminar e trocar conhecimento técnico sobre exploração, desenvolvimento e produção 
-              de recursos petrolíferos.
+              {t('about.desc')}
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
-                <h4 className="font-bold text-gray-900 dark:text-white mb-2">Nossa Missão</h4>
+                <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t('about.mission_title')}</h4>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Coletar, disseminar e trocar conhecimento técnico e promover o desenvolvimento profissional.
+                  {t('about.mission_desc')}
                 </p>
               </div>
               <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
-                <h4 className="font-bold text-gray-900 dark:text-white mb-2">Nossa Visão</h4>
+                <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t('about.vision_title')}</h4>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Ser o principal recurso para conhecimento técnico e desenvolvimento profissional em nossa região.
+                  {t('about.vision_desc')}
                 </p>
               </div>
             </div>
             
             <Link to="/sobre">
               <Button variant="primary">
-                Saiba Mais Sobre Nós
+                {t('about.btn')}
               </Button>
             </Link>
           </motion.div>

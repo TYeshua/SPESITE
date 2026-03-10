@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { sponsors } from '../../assets/data/sponsors';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const variants = {
   enter: (direction: number) => ({
@@ -19,13 +20,6 @@ const variants = {
   }),
 };
 
-const levelTitles = {
-  platinum: 'Patrocinadores Platina',
-  gold: 'Patrocinadores Ouro',
-  silver: 'Patrocinadores Prata',
-  bronze: 'Patrocinadores Bronze',
-  apoiadores: 'Apoiadores',
-};
 
 const levelColors = {
   platinum: 'text-cyan-400',
@@ -36,13 +30,27 @@ const levelColors = {
 };
 
 const SponsorsSection: React.FC = () => {
-  const levels = ['platinum', 'gold', 'silver', 'bronze', 'apoiadores'] as const;
+  const { t } = useLanguage();
+
+  const levelTitles: Record<string, string> = {
+    platinum: t('sponsors.level.platinum'),
+    gold: t('sponsors.level.gold'),
+    silver: t('sponsors.level.silver'),
+    bronze: t('sponsors.level.bronze'),
+    apoiadores: t('sponsors.level.supporters'),
+  };
+
+  const allLevels = ['platinum', 'gold', 'silver', 'bronze', 'apoiadores'] as const;
 
   const sponsorsByLevel = sponsors.reduce((acc, sponsor) => {
     if (!acc[sponsor.level]) acc[sponsor.level] = [];
     acc[sponsor.level].push(sponsor);
     return acc;
   }, {} as Record<string, typeof sponsors>);
+
+  const levels = allLevels.filter(level => sponsorsByLevel[level] && sponsorsByLevel[level].length > 0);
+
+  if (levels.length === 0) return null;
 
   const [levelIndex, setLevelIndex] = useState(0);
   const [pageIndex, setPageIndex] = useState(0);
@@ -92,9 +100,9 @@ const SponsorsSection: React.FC = () => {
     <section className="py-10 sm:py-5 lg:py-7 dark:bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-blue-600 dark:text-blue-400 font-medium mb-2">NOSSOS PATROCINADORES</h2>
+          <h2 className="text-blue-600 dark:text-blue-400 font-medium mb-2">{t('sponsors.subtitle')}</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-            Parceiros que Apoiam Nossa Missão
+            {t('sponsors.title')}
           </h3>
           <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300"></p>
         </div>

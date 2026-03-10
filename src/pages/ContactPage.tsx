@@ -4,8 +4,10 @@ import { useInView } from 'react-intersection-observer';
 import { MapPin, Phone, Mail, Clock, Instagram, Linkedin } from 'lucide-react';
 import Button from '../components/ui/Button';
 import { fadeIn, staggerContainer } from '../utils/animations';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ContactPage: React.FC = () => {
+  const { t } = useLanguage();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -24,10 +26,10 @@ const ContactPage: React.FC = () => {
             className="max-w-3xl"
           >
             <motion.h1 variants={fadeIn('up')} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Entre em Contato
+              {t('page.contact.hero_title')}
             </motion.h1>
             <motion.p variants={fadeIn('up', 0.1)} className="text-xl text-blue-100 mb-8">
-              Adoraríamos ouvir de você. Entre em contato com qualquer dúvida ou pergunta.
+              {t('page.contact.hero_desc')}
             </motion.p>
           </motion.div>
         </div>
@@ -38,18 +40,18 @@ const ContactPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-1">
               <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Informações de Contato</h2>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{t('contact.info_title')}</h2>
                 <div className="space-y-6">
                   <div className="flex items-start">
                     <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full text-blue-600 dark:text-blue-400 mr-4">
                       <MapPin className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-900 dark:text-white mb-1">Nosso Escritório</h3>
+                      <h3 className="font-bold text-gray-900 dark:text-white mb-1">{t('contact.office')}</h3>
                       <p className="text-gray-600 dark:text-gray-300">
                         UFPA Campus Salinópolis, Rua Raimundo Santana Cruz. Bairro São Tomé<br />
                         Salinópolis - PA, 68721-000<br />
-                        Brasil
+                        {t('contact.country')}
                       </p>
                     </div>
                   </div>
@@ -58,7 +60,7 @@ const ContactPage: React.FC = () => {
                       <Phone className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-900 dark:text-white mb-1">Telefone</h3>
+                      <h3 className="font-bold text-gray-900 dark:text-white mb-1">{t('contact.phone')}</h3>
                       <p className="text-gray-600 dark:text-gray-300">+55 (91) 99109-7678</p>
                     </div>
                   </div>
@@ -67,7 +69,7 @@ const ContactPage: React.FC = () => {
                       <Mail className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-900 dark:text-white mb-1">E-mail</h3>
+                      <h3 className="font-bold text-gray-900 dark:text-white mb-1">{t('contact.email')}</h3>
                       <p className="text-gray-600 dark:text-gray-300">ufpaspe@gmail.com</p>
                     </div>
                   </div>
@@ -76,10 +78,10 @@ const ContactPage: React.FC = () => {
                       <Clock className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-900 dark:text-white mb-1">Horário de Funcionamento</h3>
+                      <h3 className="font-bold text-gray-900 dark:text-white mb-1">{t('contact.hours')}</h3>
                       <p className="text-gray-600 dark:text-gray-300">
-                        Segunda - Sexta: 8:00 - 18:00<br />
-                        Sábado e Domingo: Fechado
+                        {t('contact.hours.weekdays')}<br />
+                        {t('contact.hours.weekends')}
                       </p>
                     </div>
                   </div>
@@ -87,7 +89,7 @@ const ContactPage: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Conecte-se Conosco</h2>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{t('page.contact.connect_title')}</h2>
                 <div className="flex space-x-4">
                   <a href="https://www.instagram.com/spe.ufpa" target="_blank" rel="noopener noreferrer" className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white transition-colors">
                     <Instagram className="h-6 w-6" />
@@ -101,7 +103,7 @@ const ContactPage: React.FC = () => {
 
             <div className="lg:col-span-2">
   <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 mb-8">
-    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Envie-nos uma Mensagem</h2>
+    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{t('contact.form_title')}</h2>
     
     <form 
       method="POST" 
@@ -117,7 +119,7 @@ const ContactPage: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="firstName" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-            Nome
+            {t('page.contact.form.first_name')}
           </label>
           <input 
             type="text" 
@@ -129,7 +131,7 @@ const ContactPage: React.FC = () => {
         </div>
         <div>
           <label htmlFor="lastName" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-            Sobrenome
+            {t('page.contact.form.last_name')}
           </label>
           <input 
             type="text" 
@@ -144,7 +146,7 @@ const ContactPage: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-            E-mail
+            {t('contact.form.email')}
           </label>
           <input 
             type="email" 
@@ -156,7 +158,7 @@ const ContactPage: React.FC = () => {
         </div>
         <div>
           <label htmlFor="phone" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-            Telefone
+            {t('contact.phone')}
           </label>
           <input 
             type="tel" 
@@ -169,7 +171,7 @@ const ContactPage: React.FC = () => {
 
       <div>
         <label htmlFor="subject" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-          Assunto
+          {t('contact.form.subject')}
         </label>
         <input 
           type="text" 
@@ -182,7 +184,7 @@ const ContactPage: React.FC = () => {
 
       <div>
         <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-          Mensagem
+          {t('contact.form.message')}
         </label>
         <textarea 
           name="message" 
@@ -195,7 +197,7 @@ const ContactPage: React.FC = () => {
 
       <div>
         <Button type="submit" variant="primary" className="w-full md:w-auto">
-          Enviar Mensagem
+          {t('contact.form.submit')}
         </Button>
       </div>
     </form>
@@ -203,7 +205,7 @@ const ContactPage: React.FC = () => {
 
   {/* Localização */}
   <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
-    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Nossa Localização</h2>
+    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{t('page.contact.location_title')}</h2>
     <div className="h-80 rounded-lg overflow-hidden">
       <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7979.152678256708!2d-47.34443102400542!3d-0.6310359352631287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a8991aa9bcb021%3A0x9d2277db2e684e09!2sUFPA%20-%20Campus%20Salin%C3%B3polis!5e0!3m2!1sen!2sus!4v1750277776571!5m2!1sen!2sus" 

@@ -7,18 +7,20 @@ import { events } from '../../assets/data/events';
 import Card from '../ui/Card';
 import Button from '../ui/Button';
 import { fadeIn, staggerContainer } from '../../utils/animations';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const EventsSection: React.FC = () => {
+  const { t, language } = useLanguage();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
   const categoryLabels: Record<string, string> = {
-    conference: 'Conferência',
-    workshop: 'Workshop',
-    webinar: 'Webinar',
-    networking: 'Networking',
+    conference: t('events.category.conference'),
+    workshop: t('events.category.workshop'),
+    webinar: t('events.category.webinar'),
+    networking: t('events.category.networking'),
   };
 
   return (
@@ -32,13 +34,12 @@ const EventsSection: React.FC = () => {
           className="text-center mb-12"
         >
           <motion.div variants={fadeIn('up')}>
-            <h2 className="text-blue-600 dark:text-blue-400 font-medium mb-2">EVENTOS</h2>
+            <h2 className="text-blue-600 dark:text-blue-400 font-medium mb-2">{t('events.subtitle')}</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-              Esteja por dentro dos eventos realizados por nós
+              {t('events.title')}
             </h3>
             <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
-              Conecte-se com profissionais da indústria, aprenda com especialistas e expanda seu conhecimento
-              através de nossos eventos cuidadosamente selecionados para a comunidade de petróleo e gás.
+              {t('events.desc')}
             </p>
           </motion.div>
         </motion.div>
@@ -65,13 +66,13 @@ const EventsSection: React.FC = () => {
 
                 <div className="p-6 flex-grow flex flex-col">
                   <h4 className="font-bold text-xl text-gray-900 dark:text-white mb-4">
-                    {event.title}
+                    {language === 'en' && event.title_en ? event.title_en : event.title}
                   </h4>
 
                   <div className="mb-4 flex-grow">
                     <div className="flex items-center text-gray-600 dark:text-gray-300 mb-2">
                       <Calendar className="h-4 w-4 mr-2" />
-                      <span className="text-sm">{event.date}</span>
+                      <span className="text-sm">{language === 'en' && event.date_en ? event.date_en : event.date}</span>
                     </div>
                     <div className="flex items-center text-gray-600 dark:text-gray-300 mb-2">
                       <MapPin className="h-4 w-4 mr-2" />
@@ -79,10 +80,10 @@ const EventsSection: React.FC = () => {
                     </div>
                     <div className="flex items-center text-gray-600 dark:text-gray-300 mb-4">
                       <CheckCircle className="h-4 w-4 mr-2" />
-                      <span className="text-sm">{event.ajudance}</span>
+                      <span className="text-sm">{language === 'en' && event.ajudance_en ? event.ajudance_en : event.ajudance}</span>
                     </div>
                     <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      {event.description}
+                      {language === 'en' && event.description_en ? event.description_en : event.description}
                     </p>
                   </div>
 
@@ -94,13 +95,13 @@ const EventsSection: React.FC = () => {
                       className="mt-4"
                     >
                       <Button variant="outline" className="w-full">
-                        Acessar Site do Evento
+                        {t('events.btn.website')}
                       </Button>
                     </a>
                   ) : (
                     <Link to={`/eventos/${event.id}`} className="mt-4">
                       <Button variant="outline" className="w-full">
-                        Detalhes do Evento
+                        {t('events.btn.details')}
                       </Button>
                     </Link>
                   )}
@@ -117,7 +118,7 @@ const EventsSection: React.FC = () => {
           className="text-center mt-12"
         >
           <Link to="/eventos">
-            <Button variant="primary">Ver Todos os Eventos</Button>
+            <Button variant="primary">{t('events.btn.all')}</Button>
           </Link>
         </motion.div>
       </div>

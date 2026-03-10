@@ -6,8 +6,10 @@ import { events } from '../assets/data/events';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import { fadeIn, staggerContainer } from '../utils/animations';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const EventsPage: React.FC = () => {
+  const { t, language } = useLanguage();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   
@@ -27,17 +29,17 @@ const EventsPage: React.FC = () => {
   });
   
   const categories = [
-    { id: 'conference', label: 'Conferências' },
-    { id: 'workshop', label: 'Workshops' },
-    { id: 'webinar', label: 'Webinars' },
-    { id: 'networking', label: 'Networking' },
+    { id: 'conference', label: t('page.events.cat_conferences') },
+    { id: 'workshop', label: t('page.events.cat_workshops') },
+    { id: 'webinar', label: t('page.events.cat_webinars') },
+    { id: 'networking', label: t('page.events.cat_networking') },
   ];
 
-  const categoryLabels = {
-    conference: 'Conferência',
-    workshop: 'Workshop',
-    webinar: 'Webinar',
-    networking: 'Networking'
+  const categoryLabels: Record<string, string> = {
+    conference: t('events.category.conference'),
+    workshop: t('events.category.workshop'),
+    webinar: t('events.category.webinar'),
+    networking: t('events.category.networking'),
   };
 
   return (
@@ -59,14 +61,14 @@ const EventsPage: React.FC = () => {
               variants={fadeIn('up')}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             >
-              Eventos
+              {t('page.events.hero_title')}
             </motion.h1>
             
             <motion.p
               variants={fadeIn('up', 0.1)}
               className="text-xl text-blue-100 mb-8"
             >
-              Participe de nossas próximas conferências, workshops, webinars e eventos de networking.
+              {t('page.events.hero_desc')}
             </motion.p>
           </motion.div>
         </div>
@@ -83,7 +85,7 @@ const EventsPage: React.FC = () => {
                 <div className="relative">
                   <input
                     type="text"
-                    placeholder="Buscar eventos por palavra-chave..."
+                    placeholder={t('page.events.search_placeholder')}
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
@@ -100,7 +102,7 @@ const EventsPage: React.FC = () => {
                     value={selectedCategory || ''}
                     onChange={(e) => setSelectedCategory(e.target.value || null)}
                   >
-                    <option value="">Todas as Categorias</option>
+                    <option value="">{t('page.events.all_categories')}</option>
                     {categories.map(category => (
                       <option key={category.id} value={category.id}>
                         {category.label}
@@ -155,25 +157,25 @@ const EventsPage: React.FC = () => {
                     
                     <div className="p-6 flex-grow flex flex-col">
                       <h3 className="font-bold text-xl text-gray-900 dark:text-white mb-4">
-                        {event.title}
+                        {language === 'en' && event.title_en ? event.title_en : event.title}
                       </h3>
                       
                       <div className="mb-4 flex-grow">
                         <div className="flex items-center text-gray-600 dark:text-gray-300 mb-2">
                           <Calendar className="h-4 w-4 mr-2" />
-                          <span className="text-sm">{event.date}</span>
+                          <span className="text-sm">{language === 'en' && event.date_en ? event.date_en : event.date}</span>
                         </div>
                         <div className="flex items-center text-gray-600 dark:text-gray-300 mb-4">
                           <MapPin className="h-4 w-4 mr-2" />
                           <span className="text-sm">{event.location}</span>
                         </div>
                         <p className="text-gray-600 dark:text-gray-300 text-sm">
-                          {event.description}
+                          {language === 'en' && event.description_en ? event.description_en : event.description}
                         </p>
                       </div>
                       
                       <Button variant="outline" className="w-full">
-                        Detalhes do Evento
+                        {t('events.btn.details')}
                       </Button>
                     </div>
                   </Card>
@@ -182,9 +184,9 @@ const EventsPage: React.FC = () => {
             </div>
           ) : (
             <div className="bg-gray-50 dark:bg-gray-700 p-12 rounded-lg text-center">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Nenhum Evento Encontrado</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('page.events.not_found_title')}</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Não conseguimos encontrar eventos que correspondam aos seus critérios de busca.
+                {t('page.events.not_found_desc')}
               </p>
               <Button 
                 variant="primary" 
@@ -193,7 +195,7 @@ const EventsPage: React.FC = () => {
                   setSelectedCategory(null);
                 }}
               >
-                Limpar Filtros
+                {t('page.events.clear_filters')}
               </Button>
             </div>
           )}

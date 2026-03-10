@@ -7,38 +7,7 @@ export interface Sponsor {
 }
 
 export const sponsors: Sponsor[] = [
-  
-  {
-    id: 1,
-    name: "SLB - Schlumberger",
-    logo: "SLB.jpg",
-    level: "gold",
-    website: "https://www.slb.com"
-  },
 
-  {
-    id: 8,
-    name: "Halliburton",
-    logo: "halliburton.jpg",
-    level: "platinum",
-    website: "https://www.slb.com"
-  },
-  
-  {
-    id: 9,
-    name: "Mcdonald's",
-    logo: "mcdonalds.jpg",
-    level: "silver",
-    website: "https://www.slb.com"
-  },
-
-  {
-    id: 10,
-    name: "Petrobras",
-    logo: "petrobras.jpg",
-    level: "bronze",
-    website: "https://www.slb.com"
-  },
   {
     id: 2,
     name: "YASS - Bebidas e Coveniência",

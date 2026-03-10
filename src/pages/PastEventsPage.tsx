@@ -8,8 +8,10 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import { fadeIn, staggerContainer } from '../utils/animations';
 import { pastEvents } from '../assets/data/pastEvents';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const PastEventsPage: React.FC = () => {
+  const { t } = useLanguage();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
@@ -30,17 +32,17 @@ const PastEventsPage: React.FC = () => {
   });
 
   const categories = [
-    { id: 'conference', label: 'Conferências' },
-    { id: 'workshop', label: 'Workshops' },
-    { id: 'webinar', label: 'Webinars' },
-    { id: 'networking', label: 'Networking' },
+    { id: 'conference', label: t('page.events.cat_conferences') },
+    { id: 'workshop', label: t('page.events.cat_workshops') },
+    { id: 'webinar', label: t('page.events.cat_webinars') },
+    { id: 'networking', label: t('page.events.cat_networking') },
   ];
 
-  const categoryLabels = {
-    conference: 'Conferência',
-    workshop: 'Workshop',
-    webinar: 'Webinar',
-    networking: 'Networking',
+  const categoryLabels: Record<string, string> = {
+    conference: t('events.category.conference'),
+    workshop: t('events.category.workshop'),
+    webinar: t('events.category.webinar'),
+    networking: t('events.category.networking'),
   };
 
   return (
@@ -61,14 +63,14 @@ const PastEventsPage: React.FC = () => {
               variants={fadeIn('up')}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             >
-              Eventos Passados
+              {t('page.past_events.hero_title')}
             </motion.h1>
 
             <motion.p
               variants={fadeIn('up', 0.1)}
               className="text-xl text-blue-100 mb-8"
             >
-              Explore os eventos anteriores promovidos pela SPE UFPA.
+              {t('page.past_events.hero_desc')}
             </motion.p>
           </motion.div>
         </div>
@@ -85,7 +87,7 @@ const PastEventsPage: React.FC = () => {
                 <div className="relative">
                   <input
                     type="text"
-                    placeholder="Buscar eventos por palavra-chave..."
+                    placeholder={t('page.events.search_placeholder')}
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
@@ -102,7 +104,7 @@ const PastEventsPage: React.FC = () => {
                     value={selectedCategory || ''}
                     onChange={(e) => setSelectedCategory(e.target.value || null)}
                   >
-                    <option value="">Todas as Categorias</option>
+                    <option value="">{t('page.events.all_categories')}</option>
                     {categories.map(category => (
                       <option key={category.id} value={category.id}>
                         {category.label}
@@ -174,7 +176,7 @@ const PastEventsPage: React.FC = () => {
                       </div>
 
                       <Button variant="outline" className="w-full">
-                        Detalhes do Evento
+                        {t('events.btn.details')}
                       </Button>
                     </div>
                   </Card>
@@ -183,9 +185,9 @@ const PastEventsPage: React.FC = () => {
             </div>
           ) : (
             <div className="bg-gray-50 dark:bg-gray-700 p-12 rounded-lg text-center">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Nenhum Evento Encontrado</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('page.events.not_found_title')}</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Não conseguimos encontrar eventos que correspondam aos seus critérios de busca.
+                {t('page.events.not_found_desc')}
               </p>
               <Button
                 variant="primary"
@@ -194,7 +196,7 @@ const PastEventsPage: React.FC = () => {
                   setSelectedCategory(null);
                 }}
               >
-                Limpar Filtros
+                {t('page.events.clear_filters')}
               </Button>
             </div>
           )}

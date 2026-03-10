@@ -4,8 +4,10 @@ import { useInView } from 'react-intersection-observer';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import Button from '../ui/Button';
 import { fadeIn, staggerContainer } from '../../utils/animations';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const ContactSection: React.FC = () => {
+  const { t } = useLanguage();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -22,13 +24,12 @@ const ContactSection: React.FC = () => {
           className="text-center mb-12"
         >
           <motion.div variants={fadeIn('up')}>
-            <h2 className="text-blue-600 dark:text-blue-400 font-medium mb-2">ENTRE EM CONTATO</h2>
+            <h2 className="text-blue-600 dark:text-blue-400 font-medium mb-2">{t('contact.subtitle')}</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-              Fale Conosco
+              {t('contact.title')}
             </h3>
             <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
-              Tem dúvidas ou quer saber mais sobre a SPE UFPA? Adoraríamos ouvir de você.
-              Entre em contato conosco usando o formulário abaixo ou nos contate diretamente.
+              {t('contact.desc')}
             </p>
           </motion.div>
         </motion.div>
@@ -41,7 +42,7 @@ const ContactSection: React.FC = () => {
             animate={inView ? "show" : "hidden"}
           >
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
-              <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Informações de Contato</h4>
+              <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{t('contact.info_title')}</h4>
               
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -49,11 +50,11 @@ const ContactSection: React.FC = () => {
                     <MapPin className="h-6 w-6" />
                   </div>
                   <div>
-                    <h5 className="font-bold text-gray-900 dark:text-white mb-1">Nosso Escritório</h5>
+                    <h5 className="font-bold text-gray-900 dark:text-white mb-1">{t('contact.office')}</h5>
                     <p className="text-gray-600 dark:text-gray-300">
                       UFPA Campus Salinópolis<br />
                       Rua Raimundo Santana Cruz, S/N. Bairro São Tomé - Salinópolis - PA- PA, 68721-000<br />
-                      Brasil
+                      {t('contact.country')}
                     </p>
                   </div>
                 </div>
@@ -63,7 +64,7 @@ const ContactSection: React.FC = () => {
                     <Phone className="h-6 w-6" />
                   </div>
                   <div>
-                    <h5 className="font-bold text-gray-900 dark:text-white mb-1">Telefone</h5>
+                    <h5 className="font-bold text-gray-900 dark:text-white mb-1">{t('contact.phone')}</h5>
                     <p className="text-gray-600 dark:text-gray-300">+55 (91) 99109-7678</p>
                   </div>
                 </div>
@@ -73,7 +74,7 @@ const ContactSection: React.FC = () => {
                     <Mail className="h-6 w-6" />
                   </div>
                   <div>
-                    <h5 className="font-bold text-gray-900 dark:text-white mb-1">E-mail</h5>
+                    <h5 className="font-bold text-gray-900 dark:text-white mb-1">{t('contact.email')}</h5>
                     <p className="text-gray-600 dark:text-gray-300">ufpaspe@gmail.com</p>
                   </div>
                 </div>
@@ -83,10 +84,10 @@ const ContactSection: React.FC = () => {
                     <Clock className="h-6 w-6" />
                   </div>
                   <div>
-                    <h5 className="font-bold text-gray-900 dark:text-white mb-1">Horário de Funcionamento</h5>
+                    <h5 className="font-bold text-gray-900 dark:text-white mb-1">{t('contact.hours')}</h5>
                     <p className="text-gray-600 dark:text-gray-300">
-                      Segunda - Sexta: 8:00 - 18:00<br />
-                      Sábado e Domingo: Fechado
+                      {t('contact.hours.weekdays')}<br />
+                      {t('contact.hours.weekends')}
                     </p>
                   </div>
                 </div>
@@ -116,7 +117,7 @@ const ContactSection: React.FC = () => {
   animate={inView ? "show" : "hidden"}
 >
   <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
-    <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Envie-nos uma Mensagem</h4>
+    <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{t('contact.form_title')}</h4>
     
     <form 
       action="https://formspree.io/f/xblybqab" 
@@ -126,7 +127,7 @@ const ContactSection: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-            Seu Nome
+            {t('contact.form.name')}
           </label>
           <input 
             type="text" 
@@ -139,7 +140,7 @@ const ContactSection: React.FC = () => {
         
         <div>
           <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-            Seu E-mail
+            {t('contact.form.email')}
           </label>
           <input 
             type="email" 
@@ -153,7 +154,7 @@ const ContactSection: React.FC = () => {
       
       <div>
         <label htmlFor="subject" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-          Assunto
+          {t('contact.form.subject')}
         </label>
         <input 
           type="text" 
@@ -166,7 +167,7 @@ const ContactSection: React.FC = () => {
       
       <div>
         <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-          Mensagem
+          {t('contact.form.message')}
         </label>
         <textarea 
           id="message" 
@@ -179,7 +180,7 @@ const ContactSection: React.FC = () => {
       
       <div>
         <Button type="submit" variant="primary" className="w-full">
-          Enviar Mensagem
+          {t('contact.form.submit')}
         </Button>
       </div>
     </form>
