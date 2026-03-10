@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  overflow-x: hidden;
+}
+
 /* ── Global scrollbar (página inteira) ── */
 ::-webkit-scrollbar {
   width: 6px;

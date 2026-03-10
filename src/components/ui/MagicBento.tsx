@@ -534,16 +534,33 @@ const MagicBento: React.FC<BentoProps> = ({
           }
           
           .card-responsive {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-auto-flow: dense;
-            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
             gap: 1.5rem;
+            padding-bottom: 1rem;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            -webkit-overflow-scrolling: touch;
+          }
+          .card-responsive::-webkit-scrollbar {
+            display: none;
+          }
+          .card-responsive > * {
+            flex: 0 0 85vw;
+            scroll-snap-align: center;
           }
           
           @media (min-width: 600px) {
             .card-responsive {
+              display: grid;
               grid-template-columns: repeat(2, 1fr);
+              overflow-x: visible;
+              padding-bottom: 0;
+            }
+            .card-responsive > * {
+              flex: auto;
             }
           }
           
@@ -633,7 +650,7 @@ const MagicBento: React.FC<BentoProps> = ({
         <div className="card-responsive">
           {members.map((member) => {
             const isLargeCard = member.name === 'Shelda Corrêa' || member.name === 'Thiago Yeshua';
-            const baseClassName = `group card ${isLargeCard ? 'is-large' : ''} flex flex-col bg-white dark:bg-gray-800 relative w-full h-full min-h-[350px] rounded-[20px] border-2 border-blue-600 dark:border-cyan-500 overflow-hidden transition-colors duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
+            const baseClassName = `group card ${isLargeCard ? 'is-large' : ''} flex flex-col bg-white dark:bg-gray-800 relative w-full h-full min-h-[280px] sm:min-h-[350px] rounded-[20px] border-2 border-blue-600 dark:border-cyan-500 overflow-hidden transition-colors duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
               enableBorderGlow ? 'card--border-glow' : ''
             }`;
 
@@ -648,7 +665,7 @@ const MagicBento: React.FC<BentoProps> = ({
 
             const renderContent = (isLargeCard: boolean) => (
               <>
-                <div className={`relative ${isLargeCard ? 'h-64 sm:h-72 md:h-80 lg:h-[22rem]' : 'h-64 sm:h-72'} w-full overflow-hidden border-b border-blue-600 dark:border-cyan-500 shrink-0`}>
+                <div className={`relative ${isLargeCard ? 'h-52 sm:h-72 md:h-80 lg:h-[22rem]' : 'h-52 sm:h-72'} w-full overflow-hidden border-b border-blue-600 dark:border-cyan-500 shrink-0`}>
                   <img 
                     src={member.image} 
                     alt={member.name} 

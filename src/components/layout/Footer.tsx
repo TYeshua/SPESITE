@@ -52,8 +52,8 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-semibold mb-4">{t('footer.contact_info')}</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-blue-500 mr-2 mt-1" />
-                <span className="text-gray-400 dark:text-gray-500">UFPA Campus Salinópolis, Rua Raimundo Santana Cruz, S/N. Bairro São Tomé - Salinópolis - PA, 68721-000, Brasil</span>
+                <MapPin className="h-5 w-5 text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                <span className="text-gray-400 dark:text-gray-500 break-words">UFPA Campus Salinópolis, Rua Raimundo Santana Cruz, S/N. Bairro São Tomé - Salinópolis - PA, 68721-000, Brasil</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-blue-500 mr-2" />

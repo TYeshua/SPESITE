@@ -41,11 +41,11 @@ const Header: React.FC = () => {
   ];
 
   const ctaNode = (
-    <div className="flex items-center space-x-2 md:space-x-4 z-10">
+    <div className="hidden md:flex items-center space-x-2 md:space-x-4 z-10">
       <button 
         type="button" 
         onClick={toggleLanguage}
-        className={`hidden md:flex items-center font-medium ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-600'} transition-colors text-sm md:mr-16`}
+        className={`flex items-center font-medium ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-600'} transition-colors text-sm md:mr-16`}
       >
         <Globe className="h-5 w-5 mr-1" /> {language === 'pt' ? 'EN' : 'PT'}
       </button>
@@ -54,31 +54,77 @@ const Header: React.FC = () => {
         href="https://www.spe.org/appsaccess/login/jsp/siteRegistration.jsp?ERIGHTS_TARGET=..."
         target="_blank"
         rel="noopener noreferrer"
-        className="hidden md:inline-flex bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700 transition-colors text-sm items-center min-h-[34px]"
+        className="inline-flex bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700 transition-colors text-sm items-center min-h-[34px]"
       >
         {t('nav.join')}
       </a>
     </div>
   );
 
+  const mobileCtaNode = (
+    <div className="flex flex-col gap-3 mt-4 md:hidden">
+      <button 
+        type="button" 
+        onClick={toggleLanguage}
+        className={`flex items-center justify-center font-medium ${isDarkMode ? 'text-gray-200 bg-gray-700' : 'text-gray-800 bg-gray-100'} p-3 rounded-lg transition-colors text-base`}
+      >
+        <Globe className="h-5 w-5 mr-2" /> {language === 'pt' ? 'Mudar para Inglês' : 'Change to Portuguese'}
+      </button>
+
+      <a
+        href="https://www.spe.org/appsaccess/login/jsp/siteRegistration.jsp?ERIGHTS_TARGET=..."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex justify-center bg-blue-600 text-white px-4 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors text-base items-center"
+      >
+        {t('nav.join')}
+      </a>
+    </div>
+  );
+
+  const leftNode = (
+    <Link to="/" className="md:hidden flex items-center">
+      <img 
+        src="./spefundo.png" 
+        alt="SPE Logo" 
+        className={`h-[70px] w-[120px] sm:h-[80px] sm:w-[140px] object-contain ${!isDarkMode ? 'bg-gray-900 rounded-md p-1' : ''}`} 
+      />
+    </Link>
+  );
+
+  const desktopCombinedLogoNode = (
+    <Link to="/" className="hidden md:flex items-center relative">
+      <img 
+        src="/spefundo.png" 
+        alt="SPE Logo" 
+        className={`absolute right-full mr-2 h-[160px] w-[250px] object-contain ${!isDarkMode ? 'bg-gray-900 rounded-lg p-2' : ''}`} 
+      />
+      <Logo isScrolled={!isDarkMode} />
+    </Link>
+  );
+
+  const mobileCenterLogoNode = (
+    <Link to="/" className="md:hidden flex items-center">
+      <Logo isScrolled={!isDarkMode} />
+    </Link>
+  );
+
   return (
     <header className="fixed w-full z-50 top-0 pointer-events-none">
       <div className="pointer-events-auto">
         <CardNav
+          leftNode={leftNode}
           logoNode={
-            <Link to="/" className="flex items-center relative">
-              <img 
-                src="/spefundo.png" 
-                alt="SPE Logo" 
-                className={`h-[120px] w-[200px] mr-3 md:absolute md:right-full md:mr-2 md:h-[160px] md:w-[250px] object-contain ${!isDarkMode ? 'bg-gray-900 rounded-lg p-2' : ''}`} 
-              />
-              <Logo isScrolled={!isDarkMode} />
-            </Link>
+            <>
+              {desktopCombinedLogoNode}
+              {mobileCenterLogoNode}
+            </>
           }
           items={items}
           baseColor={isDarkMode ? '#111827' : '#ffffff'}
           menuColor={isDarkMode ? '#ffffff' : '#000000'}
           ctaNode={ctaNode}
+          mobileCtaNode={mobileCtaNode}
         />
       </div>
     </header>

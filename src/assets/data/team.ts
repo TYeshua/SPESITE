@@ -104,7 +104,7 @@ export const teamsData: TeamByYear[] = [
         name: "Andressa Menezes",
         position: "Secretária",
         position_en: "Secretary",
-        image: "andress.jpeg",
+        image: "andress2.jpeg",
         bio: "Secretária da SPE-UFPA, responsável por apoiar a execução das atividades, manter a organização administrativa e contribuir para a gestão operacional do capítulo.",
         bio_en: "Secretary of SPE-UFPA, responsible for supporting the execution of activities, maintaining administrative organization, and contributing to the chapter's operational management.",
         linkedin: "https://www.linkedin.com/in/andressa-menezes-a1b358303?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",

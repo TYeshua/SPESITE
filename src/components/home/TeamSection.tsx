@@ -43,13 +43,19 @@ const TeamSection: React.FC = () => {
         {currentTeamObj?.year === '2026' ? (
           <MagicBento members={currentTeam} />
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {currentTeam.slice(0, 8).map((member, index) => (
+          <>
+            <style>{`
+              .hide-scrollbar::-webkit-scrollbar { display: none; }
+              .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+            `}</style>
+            <div className="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-4 hide-scrollbar sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-8 sm:overflow-visible sm:pb-0">
+              {currentTeam.slice(0, 8).map((member, index) => (
               <motion.div
                 key={member.id}
                 variants={fadeIn('up', index * 0.1)}
                 initial="hidden"
                 animate={inView ? "show" : "hidden"}
+                className="w-[85vw] flex-shrink-0 snap-center sm:w-auto sm:flex-shrink-1"
               >
                 <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group border-2 border-blue-600 dark:border-cyan-500 flex flex-col h-full">
                   <div className="relative h-72 overflow-hidden border-b border-blue-600 dark:border-cyan-500 shrink-0">
@@ -92,7 +98,8 @@ const TeamSection: React.FC = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
+            </div>
+          </>
         )}
         
         <motion.div 

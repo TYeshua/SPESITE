@@ -113,7 +113,7 @@ const SponsorsSection: React.FC = () => {
           </h4>
         </div>
 
-        <div className="relative overflow-hidden" style={{ height: 160 }}>
+        <div className="relative overflow-hidden h-[100px] sm:h-[160px]">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={`${levelIndex}-${pageIndex}`}

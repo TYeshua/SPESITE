@@ -35,12 +35,12 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="max-w-2xl pointer-events-auto"
         >
-          <h1 className="mt-20 text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="mt-24 md:mt-20 text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Society of Petroleum Engineers <br />
             <span className="block text-blue-700">{t('hero.chapter')}</span>
           </h1>
           
-          <p className="text-xl text-gray-200 mb-8">
+          <p className="text-base md:text-xl text-gray-200 mb-8">
             {t('hero.desc')}
           </p>
           

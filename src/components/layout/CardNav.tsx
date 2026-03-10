@@ -19,6 +19,7 @@ export type CardNavItem = {
 export interface CardNavProps {
   logo?: string;
   logoNode?: React.ReactNode;
+  leftNode?: React.ReactNode;
   logoAlt?: string;
   items: CardNavItem[];
   className?: string;
@@ -28,6 +29,7 @@ export interface CardNavProps {
   buttonBgColor?: string;
   buttonTextColor?: string;
   ctaNode?: React.ReactNode;
+  mobileCtaNode?: React.ReactNode;
   ctaText?: string;
   ctaHref?: string;
 }
@@ -35,6 +37,7 @@ export interface CardNavProps {
 const CardNav: React.FC<CardNavProps> = ({
   logo,
   logoNode,
+  leftNode,
   logoAlt = 'Logo',
   items,
   className = '',
@@ -44,6 +47,7 @@ const CardNav: React.FC<CardNavProps> = ({
   buttonBgColor,
   buttonTextColor,
   ctaNode,
+  mobileCtaNode,
   ctaText = 'Get Started',
   ctaHref,
 }) => {
@@ -175,35 +179,19 @@ const CardNav: React.FC<CardNavProps> = ({
 
   return (
     <div
-      className={`card-nav-container absolute left-1/2 -translate-x-1/2 w-[90%] max-w-[800px] z-[99] top-[1.2em] md:top-[2em] ${className}`}
+      className={`card-nav-container absolute left-1/2 -translate-x-1/2 w-[95%] sm:w-[90%] max-w-[800px] z-[99] top-[1.2em] md:top-[2em] ${className}`}
     >
       <nav
         ref={navRef}
         className={`card-nav ${isExpanded ? 'open' : ''} block h-[80px] p-0 rounded-xl shadow-md relative overflow-hidden will-change-[height]`}
         style={{ backgroundColor: baseColor }}
       >
-        <div className="card-nav-top absolute inset-x-0 top-0 h-[80px] flex items-center justify-between p-2 pl-[1.1rem] z-[2]">
-          <div
-            className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group h-full flex flex-col items-center justify-center cursor-pointer gap-[6px] order-2 md:order-none`}
-            onClick={toggleMenu}
-            role="button"
-            aria-label={isExpanded ? 'Close menu' : 'Open menu'}
-            tabIndex={0}
-            style={{ color: menuColor || '#000' }}
-          >
-            <div
-              className={`hamburger-line w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
-                isHamburgerOpen ? 'translate-y-[4px] rotate-45' : ''
-              } group-hover:opacity-75`}
-            />
-            <div
-              className={`hamburger-line w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
-                isHamburgerOpen ? '-translate-y-[4px] -rotate-45' : ''
-              } group-hover:opacity-75`}
-            />
+        <div className="card-nav-top absolute inset-x-0 top-0 h-[80px] flex items-center justify-between p-2 pl-4 md:pl-[1.1rem] z-[2]">
+          <div className="flex-1 flex justify-start items-center relative z-[50]">
+            {leftNode}
           </div>
 
-          <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none cursor-pointer z-10" onClick={() => setIsExpanded(false)}>
+          <div className="logo-container flex items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10" onClick={() => setIsExpanded(false)}>
             {logoNode ? (
               logoNode
             ) : logo ? (
@@ -211,27 +199,48 @@ const CardNav: React.FC<CardNavProps> = ({
             ) : null}
           </div>
 
-          {ctaNode ? (
-            ctaNode
-          ) : ctaHref ? (
-            <a
-              href={ctaHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="card-nav-cta-button hidden md:inline-flex border-0 rounded-[calc(0.75rem-0.2rem)] px-4 items-center h-full font-medium cursor-pointer transition-colors duration-300 text-sm"
-              style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+          <div className="flex-1 flex justify-end items-center gap-2 relative z-[50] pr-2">
+            {ctaNode}
+            {(!ctaNode && ctaHref) ? (
+              <a
+                href={ctaHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-nav-cta-button hidden md:inline-flex border-0 rounded-[calc(0.75rem-0.2rem)] px-4 items-center h-[40px] font-medium cursor-pointer transition-colors duration-300 text-sm"
+                style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+              >
+                {ctaText}
+              </a>
+            ) : (!ctaNode && !ctaHref && ctaText) ? (
+              <button
+                type="button"
+                className="card-nav-cta-button hidden md:inline-flex border-0 rounded-[calc(0.75rem-0.2rem)] px-4 items-center h-[40px] font-medium cursor-pointer transition-colors duration-300 text-sm"
+                style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+              >
+                {ctaText}
+              </button>
+            ) : null}
+
+            <div
+              className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group h-[40px] w-[40px] flex flex-col items-center justify-center cursor-pointer gap-[6px]`}
+              onClick={toggleMenu}
+              role="button"
+              aria-label={isExpanded ? 'Close menu' : 'Open menu'}
+              tabIndex={0}
+              style={{ color: menuColor || '#000' }}
             >
-              {ctaText}
-            </a>
-          ) : (
-            <button
-              type="button"
-              className="card-nav-cta-button hidden md:inline-flex border-0 rounded-[calc(0.75rem-0.2rem)] px-4 items-center h-full font-medium cursor-pointer transition-colors duration-300 text-sm"
-              style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
-            >
-              {ctaText}
-            </button>
-          )}
+              <div
+                className={`hamburger-line w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
+                  isHamburgerOpen ? 'translate-y-[4px] rotate-45' : ''
+                } group-hover:opacity-75`}
+              />
+              <div
+                className={`hamburger-line w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
+                  isHamburgerOpen ? '-translate-y-[4px] -rotate-45' : ''
+                } group-hover:opacity-75`}
+              />
+            </div>
+          </div>
         </div>
 
         <div
@@ -279,6 +288,12 @@ const CardNav: React.FC<CardNavProps> = ({
               </div>
             </div>
           ))}
+          
+          {mobileCtaNode && (
+            <div className="md:hidden mt-2 flex flex-col w-full px-2 pb-2">
+              {mobileCtaNode}
+            </div>
+          )}
         </div>
       </nav>
     </div>

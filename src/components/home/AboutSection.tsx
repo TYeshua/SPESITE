@@ -26,7 +26,7 @@ const AboutSection: React.FC = () => {
           {/* Image side qaaaaa*/}
           <motion.div 
             variants={fadeIn('right')}
-            className="relative"
+            className="relative mb-12 lg:mb-0"
           >
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
@@ -35,7 +35,7 @@ const AboutSection: React.FC = () => {
                 className="w-full h-auto"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+            <div className="absolute -bottom-6 right-0 md:-right-6 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg max-w-[90%] md:max-w-none">
               <p className="text-blue-600 dark:text-blue-400 font-bold text-xl">{t('about.caption_title')}</p>
               <p className="text-gray-600 dark:text-gray-400 text-sm">{t('about.caption_desc')}</p>
             </div>
